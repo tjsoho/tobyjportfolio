@@ -4,6 +4,7 @@ import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import AboutMe from "./AboutMe";
 import Portfolio from "./Portfolio";
+import ContactForm from "./ContactForm";
 
 const ContentPage = () => {
   const smallScreen = useMediaQuery(
@@ -56,8 +57,9 @@ const ContentPage = () => {
             position: "relative"
           }}>
           <Box sx={glassMorphismStyles}>
-            <AboutMe />
+            {/* <AboutMe /> */}
             {/* <Portfolio /> */}
+            <ContactForm />
           </Box>
         </Box>
       </Grid>

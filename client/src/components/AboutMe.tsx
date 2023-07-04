@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import portrait from "../assets/TobyPortraitNoBG.png";
 
@@ -7,12 +7,12 @@ const AboutMe = () => {
     <Box>
       <Box>
         <div style={{ position: "relative" }}>
-          <h1 style={{ marginBottom: "10px" }}>
+          <Typography variant="h1" style={{ marginBottom: "10px" }}>
             About
             <br />
             Me
-          </h1>
-          <button
+          </Typography>
+          <Button
             style={{
               position: "absolute",
               top: 0,
@@ -21,7 +21,7 @@ const AboutMe = () => {
             }}
           >
             Menu
-          </button>
+          </Button>
           <p style={{ fontSize: "16px" }}>
             Born with an innate passion for creation, this multifaceted artist
             embarked on a transformative journey, exploring various artistic

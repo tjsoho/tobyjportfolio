@@ -1,4 +1,4 @@
-import { useMediaQuery } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import verticalSVG from "../assets/vertical-hello.svg";
@@ -36,8 +36,8 @@ const Home = () => {
         justifyContent: "center",
         alignItems: "center",
       }}>
-        <h1> Toby J</h1>
-        <h3>UX/UI Designer</h3>
+        <Typography variant="h1"> Toby J</Typography>
+        <Typography variant="h3"> UX/UI Designer</Typography>
       </Box>
     </div>
   );
