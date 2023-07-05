@@ -1,43 +1,79 @@
-import { Typography, useMediaQuery } from "@mui/material";
+import { Button, Typography, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import verticalSVG from "../assets/vertical-hello.svg";
 import horizontal from "../assets/horizontal.svg";
 
 const Home = () => {
-  const smallScreen = useMediaQuery(
-    "(min-width: 300px) and (max-width: 600px)"
-  );
-  const mediumScreen = useMediaQuery(
-    "(min-width: 600px) and (max-width: 1350px)"
-  );
+  const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
+  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 1350px)");
 
   let bgSVG;
+  let headingSize;
+  let buttonPos;
+  let SVGsize;
+  let buttonWidth;
+  let buttonHeight;
+  let buttonFontSize;
+  
   if (smallScreen) {
     bgSVG = "url(" + verticalSVG + ")";
+    headingSize = "6rem";
+    buttonPos = -200;
+    SVGsize = "70%";
+    buttonWidth = 100;
+    buttonHeight = 35;
+    buttonFontSize = 16;
   } else if (mediumScreen) {
     bgSVG = "url(" + horizontal + ")";
+    headingSize = "8rem";
+    buttonPos = -150;
+    SVGsize = "90%";
+    buttonWidth = 120;
+    buttonHeight = 40;
+    buttonFontSize = 16;
   } else {
     bgSVG = "url(" + horizontal + ")";
+    headingSize = "10rem";
+    buttonPos = -350;
+    SVGsize = "95%";
+    buttonWidth = 150;
+    buttonHeight = 50;
+    buttonFontSize = 20;
   }
 
   return (
     <div>
-      <Box sx= {{
-        backgroundColor: "#5B71EA",
-        height: "100vh",
-        width: "100vw",
-        backgroundImage: bgSVG,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}>
-        <Typography variant="h1"> Toby J</Typography>
-        <Typography variant="h3"> UX/UI Designer</Typography>
+      <Box
+        sx={{
+          backgroundColor: "#5B71EA",
+          height: "100vh",
+          width: "100vw",
+          backgroundImage: bgSVG,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: SVGsize,
+          backgroundPosition: "center",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Button href="/menu"
+          style={{
+            top: buttonPos,
+            right: 0,
+            width: buttonWidth,
+            height: buttonHeight,
+            fontSize: buttonFontSize,
+          }}
+        >
+          Menu
+        </Button>
+        <Typography variant="h1" sx={{ color: "#FFFFFF", fontSize: headingSize }}>
+          Toby J
+        </Typography>
+        <Typography variant="h3">UX/UI Designer</Typography>
       </Box>
     </div>
   );

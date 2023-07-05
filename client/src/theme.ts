@@ -2,7 +2,6 @@ import { createTheme } from "@mui/material/styles";
 
 // Create a custom theme
 const theme = createTheme({
-  
   palette: {
     mode: 'light',
     primary: {
@@ -24,8 +23,9 @@ const theme = createTheme({
   typography: {
     h1: {
       fontFamily: 'Lilita One',
-      fontSize: '6.6rem',
+      fontSize: '6rem',
       fontWeight: 300,
+      color: '#423C3C',
     },
     h2: {
       fontFamily: 'Lilita One',
@@ -35,6 +35,11 @@ const theme = createTheme({
       fontFamily: 'Lilita One',
       fontWeight: 200,
       backgroundColor: '#ffcf51',
+        ":hover": {
+          backgroundColor: "#FE7075",
+          color: "#FE7075",
+          fontSize: "3rem",
+      },
     },
     h3: {
       fontSize: '2rem',
@@ -45,12 +50,13 @@ const theme = createTheme({
       fontWeight: 500,
       fontSize: '2rem',
     },
+    body1: {
+      fontSize: '1.1rem',
+    },
   },
   shape: {
-    borderRadius: 4,
+    borderRadius: 8,
   },
 });
 
 export default theme;
-
-
