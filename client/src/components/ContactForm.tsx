@@ -11,19 +11,29 @@ const Contact = () => {
   };
 
   const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
-  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 1350px)");
+  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 900px)");
+  const largeScreen = useMediaQuery("(min-width: 900px) and (max-width: 1350px)");
+
 
   let bgSVG;
   let headingSize;
+  let morphWidth;
   if (smallScreen) {
     bgSVG = "url(" + mobileBG + ")";
     headingSize = "3rem";
+    morphWidth = "75%";
   } else if (mediumScreen) {
     bgSVG = "url(" + tabletBG + ")";
     headingSize = "4rem";
-  } else {
+    morphWidth = "75%";
+      } else if (largeScreen) {
     bgSVG = "url(" + tabletBG + ")";
-    headingSize = "8rem";
+    headingSize = "5rem";
+    morphWidth = "55%";
+     } else {
+    bgSVG = "url(" + tabletBG + ")";
+    headingSize = "5rem";
+    morphWidth = "55%";
   }
 
   const glassMorphismStyles = {
@@ -33,7 +43,7 @@ const Contact = () => {
     border: "1px solid",
     borderColor: "#D9D9D9",
     height: "85%",
-    width: "75%",
+    width: morphWidth,
     position: "absolute",
     top: "50%",
     left: "50%",
@@ -41,8 +51,8 @@ const Contact = () => {
     transform: "translate(-50%, -50%)",
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const textFieldStyle = {
@@ -70,7 +80,8 @@ const Contact = () => {
                 textAlign: "center",
                 flexDirection: "column",
                 justifyContent: "center",
-                mt: 4,
+                alignItems: "center",
+                mt: 2,
                 mb: 2,
                 maxWidth: 400,
                 mx: "auto",
@@ -82,7 +93,7 @@ const Contact = () => {
                 sx={{
                   letterSpacing: "4px",
                   fontSize: headingSize,
-                  mb: 4,
+                  mb: 2,
                   textAlign: "left",                  
                 }}
               >
@@ -100,7 +111,7 @@ const Contact = () => {
                     name="name"
                     fullWidth
                     color="secondary"
-                    sx={{ my: 3 }}
+                    sx={{ my: 1 }}
                     inputProps={{
                       style: textFieldStyle
                     }}
@@ -111,7 +122,7 @@ const Contact = () => {
                     variant="standard"
                     name="email"
                     fullWidth
-                    sx={{ my: 3 }}
+                    sx={{ my: 1 }}
                     inputProps={{
                       style: textFieldStyle
                     }}
@@ -122,7 +133,7 @@ const Contact = () => {
                     variant="standard"
                     name="phone"
                     fullWidth
-                    sx={{ my: 3 }}
+                    sx={{ my: 1 }}
                     inputProps={{
                       style: textFieldStyle
                     }}
@@ -133,7 +144,7 @@ const Contact = () => {
                     variant="standard"
                     name="message"
                     fullWidth
-                    sx={{ my: 3 }}
+                    sx={{ my: 1 }}
                     inputProps={{
                       style: textFieldStyle
                     }}

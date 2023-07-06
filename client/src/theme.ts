@@ -16,7 +16,7 @@ const theme = createTheme({
       default: '#5b71ea',
     },
     text: {
-      secondary: '#ffcf51',
+      secondary: 'grey',
       disabled: '#bbbaba',
     },
   },
