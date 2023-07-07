@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Button, useMediaQuery } from "@mui/material";
+import tabletBG from "../assets/largeSVG.svg";
 
 const colors = [
   "#FFE597",
@@ -14,34 +15,59 @@ const Menu = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
 
   let boxHeight;
+  let boxWidth;
+  let fSize;
+  let buttonw;
   if (smallScreen) {
-    boxHeight = "33.33vh";
+    boxHeight = "30vh";
+    boxWidth = "45vw";
+    fSize = "15px";
+    buttonw = "130px";
   } else {
-    boxHeight = "33.33vh";
+    boxHeight = "40vh";
+    boxWidth = "40vw";
+    fSize = "20px";
+    buttonw = "250px";
   }
 
   const boxStyle = {
     height: boxHeight,
-    border: "10px solid white",
-    borderRadius: "50px"
+    border: "1px solid white",
+    borderRadius: "50px",
+    width: boxWidth,
+    margin: "20px",
+    backdropFilter: "blur(55px) brightness(80%)",
+    background:
+      "linear-gradient(45deg, rgba(94, 64, 64, 0.3) 0%, rgba(64, 64, 64, 0.08) 70%)",
+    
   };
 
   const buttonStyle = {
     backgroundColor: "white",
     color: "black",
-    fontSize: "20px",
+    fontSize: fSize,
     padding: "10px 20px",
-    width: "100%",
-    maxWidth: "250px"
+    width: buttonw,
+    height: "25%",
   };
 
   return (
-    <Box sx={{
-      padding: "20px"
-    }}>
-      <Grid container>
-        <Grid item xs={6} display="flex" flexDirection="column">
-          <Box bgcolor={colors[1]} sx={boxStyle}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+      sx={{
+        backgroundImage: `url(${tabletBG})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        padding: "0 20px"
+      }}
+    >
+      <Grid container spacing={4}>
+        <Grid item xs={6} display="flex" flexDirection="column" alignItems="center">
+          <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
                 display: "flex",
@@ -55,22 +81,7 @@ const Menu = () => {
               </Button>
             </Box>
           </Box>
-
           <Box bgcolor={colors[4]} sx={boxStyle}>
-            {/* <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%"
-              }}
-            >
-              <Button variant="contained" color="primary" style={buttonStyle}>
-                My Button
-              </Button>
-            </Box> */}
-          </Box>
-          <Box bgcolor={colors[1]} sx={boxStyle}>
             <Box
               sx={{
                 display: "flex",
@@ -85,9 +96,7 @@ const Menu = () => {
             </Box>
           </Box>
         </Grid>
-
-        {/* GRID TWO */}
-        <Grid item xs={6} display="flex" flexDirection="column">
+        <Grid item xs={6} display="flex" flexDirection="column" alignItems="center">
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -101,20 +110,6 @@ const Menu = () => {
                 Portfolio
               </Button>
             </Box>
-          </Box>
-          <Box bgcolor={colors[1]} sx={boxStyle}>
-            {/* <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%"
-              }}
-            >
-              <Button variant="contained" color="primary" style={buttonStyle}>
-                My Button
-              </Button>
-            </Box> */}
           </Box>
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box

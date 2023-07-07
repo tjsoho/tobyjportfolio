@@ -84,9 +84,9 @@ const Contact = () => {
             href="/menu"
             sx={{
               width: "150px",
-              height: "50px",
+              height: "45px",
               fontSize: 20,
-              margin: "40px"
+              margin: "20px"
             }}>
             Menu
           </Button>

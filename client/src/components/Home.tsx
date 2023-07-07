@@ -28,7 +28,7 @@ const Home = () => {
    
   } else {
     bgSVG = "url(" + horizontal + ")";
-    headingSize = "10rem";
+    headingSize = "12rem";
     buttonPos = -300;
     SVGsize = "95%";
     
