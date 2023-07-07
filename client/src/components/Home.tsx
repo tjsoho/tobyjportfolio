@@ -12,38 +12,31 @@ const Home = () => {
   let headingSize;
   let buttonPos;
   let SVGsize;
-  let buttonWidth;
-  let buttonHeight;
-  let buttonFontSize;
+
   
   if (smallScreen) {
     bgSVG = "url(" + verticalSVG + ")";
     headingSize = "6rem";
     buttonPos = -200;
     SVGsize = "70%";
-    buttonWidth = 100;
-    buttonHeight = 35;
-    buttonFontSize = 16;
+   
   } else if (mediumScreen) {
     bgSVG = "url(" + horizontal + ")";
     headingSize = "8rem";
-    buttonPos = -150;
+    buttonPos = -250;
     SVGsize = "90%";
-    buttonWidth = 120;
-    buttonHeight = 40;
-    buttonFontSize = 16;
+   
   } else {
     bgSVG = "url(" + horizontal + ")";
     headingSize = "10rem";
-    buttonPos = -350;
+    buttonPos = -300;
     SVGsize = "95%";
-    buttonWidth = 150;
-    buttonHeight = 50;
-    buttonFontSize = 20;
+    
   }
 
   return (
     <div>
+      
       <Box
         sx={{
           backgroundColor: "#5B71EA",
@@ -59,17 +52,18 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <Button href="/menu"
-          style={{
-            top: buttonPos,
-            right: 0,
-            width: buttonWidth,
-            height: buttonHeight,
-            fontSize: buttonFontSize,
-          }}
-        >
-          Menu
-        </Button>
+    
+          <Button
+            href="/menu"
+            sx={{
+              width: "150px",
+              height: "50px",
+              fontSize: 20,
+              top: buttonPos,
+            }}>
+            Menu
+          </Button>
+       
         <Typography variant="h1" sx={{ color: "#FFFFFF", fontSize: headingSize }}>
           Toby J
         </Typography>

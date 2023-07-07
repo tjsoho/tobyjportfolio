@@ -91,7 +91,7 @@ const ContentPage = () => {
     borderRadius: "20px",
     border: "1px solid",
     borderColor: "#D9D9D9",
-    height: "85%",
+    height: "80%",
     width: "75%",
     position: "absolute",
     top: "50%",
@@ -118,6 +118,24 @@ const ContentPage = () => {
             margin: 0,
             position: "relative"
           }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              marginRight: "20px"
+            }}>
+            <Button
+              href="/menu"
+              sx={{
+                width: "150px",
+                height: "50px",
+                fontSize: 20,
+                margin: "40px"
+              }}>
+              Menu
+            </Button>
+          </Box>
           <Box sx={{ ...glassMorphismStyles, ...scrollbarStyles }}>
             <Box>
               <div style={{ position: "relative" }}>
@@ -128,7 +146,7 @@ const ContentPage = () => {
                   <br />
                   Me.
                 </Typography>
-                <Button
+                {/* <Button
                   href="/menu"
                   style={{
                     position: "absolute",
@@ -140,7 +158,7 @@ const ContentPage = () => {
                     fontSize: "1.3rem"
                   }}>
                   Menu
-                </Button>
+                </Button> */}
                 <Box
                   sx={{
                     maxHeight: "calc(50vh - 150px)",

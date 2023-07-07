@@ -42,7 +42,7 @@ const Contact = () => {
     borderRadius: "20px",
     border: "1px solid",
     borderColor: "#D9D9D9",
-    height: "85%",
+    height: "80%",
     width: morphWidth,
     position: "absolute",
     top: "50%",
@@ -74,6 +74,23 @@ const Contact = () => {
             position: "relative",
           }}
         >
+            <Box sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          marginRight: "20px",
+        }}>
+          <Button
+            href="/menu"
+            sx={{
+              width: "150px",
+              height: "50px",
+              fontSize: 20,
+              margin: "40px"
+            }}>
+            Menu
+          </Button>
+        </Box>
           <Box sx={glassMorphismStyles}>
             <Box
               sx={{
