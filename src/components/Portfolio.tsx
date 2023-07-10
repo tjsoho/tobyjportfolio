@@ -6,7 +6,6 @@ import travel from "../assets/travel.svg";
 import weather from "../assets/weather.svg";
 import note from "../assets/notes.svg";
 import password from "../assets/padlock.svg";
-import { Padding } from "@mui/icons-material";
 
 const Portfolio = () => {
   const smallScreen = useMediaQuery(
