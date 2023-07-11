@@ -1,6 +1,6 @@
 import { Box, Button, TextField, Typography, Grid } from "@mui/material";
 import { Formik, Form } from "formik";
-import React from "react";
+
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import useMediaQuery from "@mui/material/useMediaQuery";

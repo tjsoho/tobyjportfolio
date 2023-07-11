@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/largeSVG.svg";

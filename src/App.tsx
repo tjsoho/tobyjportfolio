@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material";
 import React from "react";
-import ContentPage from "./components/ContentPage";
+
 import theme from "./theme";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -22,7 +22,6 @@ function App() {
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/" element={<Home />} />
-            <Route path="/contentpage" element={<ContentPage />} />
           </Routes>
         </Router>
       </div>
