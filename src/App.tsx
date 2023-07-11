@@ -16,7 +16,6 @@ function App() {
       <div>
         <Router>
           <Routes>
-            <Route path="tobyjportfolio/home" element={<Home />} />
             <Route path="tobyjportfolio/aboutme" element={<AboutMe />} />
             <Route path="tobyjportfolio/portfolio" element={<Portfolio />} />
             <Route path="tobyjportfolio/contact" element={<ContactForm />} />
