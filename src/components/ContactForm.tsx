@@ -28,7 +28,7 @@ const Contact = () => {
     morphWidth = "75%";
       } else if (largeScreen) {
     bgSVG = "url(" + tabletBG + ")";
-    headingSize = "5rem";
+    headingSize = "4rem";
     morphWidth = "55%";
      } else {
     bgSVG = "url(" + tabletBG + ")";
@@ -42,7 +42,7 @@ const Contact = () => {
     borderRadius: "20px",
     border: "1px solid",
     borderColor: "#D9D9D9",
-    height: "80%",
+    height: "85%",
     width: morphWidth,
     position: "absolute",
     top: "50%",

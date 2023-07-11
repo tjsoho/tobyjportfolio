@@ -76,7 +76,7 @@ const Menu = () => {
                 height: "100%"
               }}
             >
-              <Button href="/aboutme" variant="contained" color="primary" style={buttonStyle}>
+              <Button href="./aboutme" variant="contained" color="primary" style={buttonStyle}>
                 About Me
               </Button>
             </Box>
@@ -90,7 +90,7 @@ const Menu = () => {
                 height: "100%"
               }}
             >
-              <Button href="/resume" variant="contained" color="primary" style={buttonStyle}>
+              <Button href="./resume" variant="contained" color="primary" style={buttonStyle}>
                 Resume
               </Button>
             </Box>
@@ -106,7 +106,7 @@ const Menu = () => {
                 height: "100%"
               }}
             >
-              <Button href="/portfolio" variant="contained" color="primary" style={buttonStyle}>
+              <Button href="./portfolio" variant="contained" color="primary" style={buttonStyle}>
                 Portfolio
               </Button>
             </Box>
@@ -120,7 +120,7 @@ const Menu = () => {
                 height: "100%"
               }}
             >
-              <Button href="/contact" variant="contained" color="primary" style={buttonStyle}>
+              <Button href="./contact" variant="contained" color="primary" style={buttonStyle}>
                 Contact Me
               </Button>
             </Box>

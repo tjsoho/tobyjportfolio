@@ -23,13 +23,13 @@ const Home = () => {
   } else if (mediumScreen) {
     bgSVG = "url(" + horizontal + ")";
     headingSize = "8rem";
-    buttonPos = -250;
+    buttonPos = -200;
     SVGsize = "90%";
    
   } else {
     bgSVG = "url(" + horizontal + ")";
     headingSize = "12rem";
-    buttonPos = -300;
+    buttonPos = -250;
     SVGsize = "95%";
     
   }
@@ -54,7 +54,7 @@ const Home = () => {
       >
     
           <Button
-            href="/menu"
+            href="tobyjportfolio/menu"
             sx={{
               width: "150px",
               height: "50px",
