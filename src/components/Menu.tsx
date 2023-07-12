@@ -73,6 +73,8 @@ const Menu = () => {
           flexDirection="column"
           alignItems="center"
         >
+          {/* ------------------------ */}
+
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -89,6 +91,9 @@ const Menu = () => {
               </Link>
             </Box>
           </Box>
+
+          {/* ------------------------ */}
+
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -106,6 +111,7 @@ const Menu = () => {
             </Box>
           </Box>
         </Grid>
+
         <Grid
           item
           xs={6}
@@ -113,6 +119,8 @@ const Menu = () => {
           flexDirection="column"
           alignItems="center"
         >
+          {/* ------------------------ */}
+
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -129,6 +137,9 @@ const Menu = () => {
               </Link>
             </Box>
           </Box>
+
+          {/* ------------------------ */}
+
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{

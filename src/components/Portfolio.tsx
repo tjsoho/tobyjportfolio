@@ -119,14 +119,16 @@ const Portfolio = () => {
                 >
                   The Ultimate Travel Game
                 </Typography>
-                <Button
-                  href="https://tjsoho.github.io/improved-travel-quiz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={buttonStyle}
-                >
-                  PLAY
-                </Button>
+
+                <Link to="https://tjsoho.github.io/improved-travel-quiz/">
+                  <Button
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    style={buttonStyle}
+                  >
+                    PLAY
+                  </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -150,14 +152,15 @@ const Portfolio = () => {
                 >
                   Weather <br /> Checker
                 </Typography>
-                <Button
-                  href="https://tjsoho.github.io/weather-api/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={buttonStyle}
-                >
-                  CHECK
-                </Button>
+                <Link to="https://tjsoho.github.io/weather-api/">
+                  <Button
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    style={buttonStyle}
+                  >
+                    CHECK
+                  </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -181,14 +184,16 @@ const Portfolio = () => {
                 >
                   The Travel <br /> Companion
                 </Typography>
-                <Button
-                  href="https://sheltered-caverns-17258.herokuapp.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={buttonStyle}
-                >
-                  LET'S GO
-                </Button>
+
+                <Link to="https://sheltered-caverns-17258.herokuapp.com/">
+                  <Button
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    style={buttonStyle}
+                  >
+                    LET'S GO
+                  </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>
@@ -212,14 +217,16 @@ const Portfolio = () => {
                 >
                   Passwod Generator
                 </Typography>
-                <Button
-                  href="https://tjsoho.github.io/w3-password-generator/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={buttonStyle}
-                >
-                  GENERATE
-                </Button>
+
+                <Link to="https://tjsoho.github.io/w3-password-generator/">
+                  <Button
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    style={buttonStyle}
+                  >
+                    GENERATE
+                  </Button>
+                </Link>
               </Box>
             </Box>
           </Grid>

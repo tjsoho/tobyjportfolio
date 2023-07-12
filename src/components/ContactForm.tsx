@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const handleSubmitForm = () => {
@@ -80,8 +81,9 @@ const Contact = () => {
           alignItems: "flex-end",
           marginRight: "20px",
         }}>
+         <Link to="/menu">
           <Button
-            href="/menu"
+            
             sx={{
               width: "150px",
               height: "45px",
@@ -90,6 +92,7 @@ const Contact = () => {
             }}>
             Menu
           </Button>
+          </Link>
         </Box>
           <Box sx={glassMorphismStyles}>
             <Box
@@ -166,7 +169,7 @@ const Contact = () => {
                       style: textFieldStyle
                     }}
                   />
-                  <Button
+                  {/* <Button
                     type="submit"
                     sx={{
                       borderRadius: "30px",
@@ -179,7 +182,7 @@ const Contact = () => {
                     }}
                   >
                     Submit
-                  </Button>
+                  </Button> */}
                 </Form>
               </Formik>
             </Box>
