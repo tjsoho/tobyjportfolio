@@ -6,6 +6,7 @@ import travel from "../assets/travel.svg";
 import weather from "../assets/weather.svg";
 import note from "../assets/notes.svg";
 import password from "../assets/padlock.svg";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const smallScreen = useMediaQuery(
@@ -39,7 +40,7 @@ const Portfolio = () => {
     marginTop: "50px",
     marginBottom: "50px",
     flexWrap: "wrap",
-    margin: "0 auto"
+    margin: "0 auto",
   };
 
   const buttonStyle = {
@@ -47,12 +48,12 @@ const Portfolio = () => {
     padding: "10px",
     width: "150px",
     borderRadius: "10px",
-    fontSize: "20px"
+    fontSize: "20px",
   };
 
   const imageStyle = {
     width: "150px",
-    height: "180px"
+    height: "180px",
   };
 
   return (
@@ -65,24 +66,29 @@ const Portfolio = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          padding: "40px"
-        }}>
-        <Box sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          marginRight: "20px",
-        }}>
-          <Button
-            href="/menu"
-            sx={{
-              width: "150px",
-              height: "50px",
-              fontSize: 20,
-              margin: "20px"
-            }}>
-            Menu
-          </Button>
+          padding: "40px",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            marginRight: "20px",
+          }}
+        >
+          <Link to="/menu">
+            <Button
+              sx={{
+                width: "150px",
+                height: "50px",
+                fontSize: 20,
+                margin: "20px",
+              }}
+            >
+              Menu
+            </Button>
+          </Link>
         </Box>
         <Box
           sx={{
@@ -91,8 +97,9 @@ const Portfolio = () => {
             alignItems: "center",
             flexWrap: "wrap",
             height: "80%",
-            width: "100%"
-          }}>
+            width: "100%",
+          }}
+        >
           <Grid item xs={12} sm={6} md={6} lg={3}>
             {/* CARD 1 */}
 
@@ -102,19 +109,22 @@ const Portfolio = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center"
-                }}>
+                  justifyContent: "center",
+                }}
+              >
                 <img src={travel} alt="" style={imageStyle} />
                 <Typography
                   variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}>
+                  sx={{ color: "white", textAlign: "center" }}
+                >
                   The Ultimate Travel Game
                 </Typography>
                 <Button
                   href="https://tjsoho.github.io/improved-travel-quiz/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={buttonStyle}>
+                  style={buttonStyle}
+                >
                   PLAY
                 </Button>
               </Box>
@@ -130,19 +140,22 @@ const Portfolio = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center"
-                }}>
+                  justifyContent: "center",
+                }}
+              >
                 <img src={weather} alt="" style={imageStyle} />
                 <Typography
                   variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}>
+                  sx={{ color: "white", textAlign: "center" }}
+                >
                   Weather <br /> Checker
                 </Typography>
                 <Button
                   href="https://tjsoho.github.io/weather-api/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={buttonStyle}>
+                  style={buttonStyle}
+                >
                   CHECK
                 </Button>
               </Box>
@@ -158,19 +171,22 @@ const Portfolio = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center"
-                }}>
+                  justifyContent: "center",
+                }}
+              >
                 <img src={note} alt="" style={imageStyle} />
                 <Typography
                   variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}>
+                  sx={{ color: "white", textAlign: "center" }}
+                >
                   The Travel <br /> Companion
                 </Typography>
                 <Button
                   href="https://sheltered-caverns-17258.herokuapp.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={buttonStyle}>
+                  style={buttonStyle}
+                >
                   LET'S GO
                 </Button>
               </Box>
@@ -186,19 +202,22 @@ const Portfolio = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center"
-                }}>
+                  justifyContent: "center",
+                }}
+              >
                 <img src={password} alt="" style={imageStyle} />
                 <Typography
                   variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}>
+                  sx={{ color: "white", textAlign: "center" }}
+                >
                   Passwod Generator
                 </Typography>
                 <Button
                   href="https://tjsoho.github.io/w3-password-generator/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={buttonStyle}>
+                  style={buttonStyle}
+                >
                   GENERATE
                 </Button>
               </Box>

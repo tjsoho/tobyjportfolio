@@ -1,8 +1,8 @@
-
 import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import portrait from "../assets/TobyPortraitNoBG.png";
+import { Link } from "react-router-dom";
 
 const ContentPage = () => {
   const smallScreen = useMediaQuery(
@@ -70,18 +70,18 @@ const ContentPage = () => {
 
   const scrollbarStyles = {
     "&::-webkit-scrollbar": {
-      width: "8px"
+      width: "8px",
     },
     "&::-webkit-scrollbar-track": {
-      background: "transparent"
+      background: "transparent",
     },
     "&::-webkit-scrollbar-thumb": {
       background: "transparent",
-      borderRadius: "4px"
+      borderRadius: "4px",
     },
     "&:hover::-webkit-scrollbar-thumb": {
-      background: "#aaa"
-    }
+      background: "#aaa",
+    },
   };
 
   const glassMorphismStyles = {
@@ -101,7 +101,7 @@ const ContentPage = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   };
 
   return (
@@ -116,49 +116,42 @@ const ContentPage = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             margin: 0,
-            position: "relative"
-          }}>
+            position: "relative",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-end",
-              marginRight: "20px"
-            }}>
-            <Button
-              href="/menu"
-              sx={{
-                width: "150px",
-                height: "45px",
-                fontSize: 20,
-                margin: "20px"
-              }}>
-              Menu
-            </Button>
+              marginRight: "20px",
+            }}
+          >
+            <Link to="/menu">
+              <Button
+                sx={{
+                  width: "150px",
+                  height: "45px",
+                  fontSize: 20,
+                  margin: "20px",
+                }}
+              >
+                Menu
+              </Button>
+            </Link>
           </Box>
           <Box sx={{ ...glassMorphismStyles, ...scrollbarStyles }}>
             <Box>
               <div style={{ position: "relative" }}>
                 <Typography
                   variant="h1"
-                  sx={{ marginBottom: "10px", fontSize: headingSize }}>
+                  sx={{ marginBottom: "10px", fontSize: headingSize }}
+                >
                   About
                   <br />
                   Me.
                 </Typography>
-                {/* <Button
-                  href="/menu"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    marginTop: "10px",
-                    width: "120px",
-                    height: "50px",
-                    fontSize: "1.3rem"
-                  }}>
-                  Menu
-                </Button> */}
+             
                 <Box
                   sx={{
                     maxHeight: "calc(50vh - 150px)",
@@ -166,11 +159,13 @@ const ContentPage = () => {
                     marginTop: "30px",
                     display: "flex",
                     flexDirection: "column",
-                    flexWrap: "wrap"
-                  }}>
+                    flexWrap: "wrap",
+                  }}
+                >
                   <Typography
                     variant="body1"
-                    sx={{ marginRight: textMargin, padding: "30px" }}>
+                    sx={{ marginRight: textMargin, padding: "30px" }}
+                  >
                     Born with an innate passion for creation, this multifaceted
                     artist embarked on a transformative journey, exploring
                     various artistic realms.
@@ -202,7 +197,7 @@ const ContentPage = () => {
                 position: "absolute",
                 top: imageTop,
                 right: "50px",
-                left: imageLeft
+                left: imageLeft,
               }}
             />
           </Box>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Button, useMediaQuery } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
+import { Link } from "react-router-dom";
 
 const colors = [
   "#FFE597",
@@ -8,7 +9,7 @@ const colors = [
   "#FE7075",
   "#FE555D",
   "#5B71EA",
-  "#FFCF51"
+  "#FFCF51",
 ];
 
 const Menu = () => {
@@ -39,7 +40,6 @@ const Menu = () => {
     backdropFilter: "blur(55px) brightness(80%)",
     background:
       "linear-gradient(45deg, rgba(94, 64, 64, 0.3) 0%, rgba(64, 64, 64, 0.08) 70%)",
-    
   };
 
   const buttonStyle = {
@@ -62,23 +62,31 @@ const Menu = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        padding: "0 20px"
+        padding: "0 20px",
       }}
     >
       <Grid container spacing={4}>
-        <Grid item xs={6} display="flex" flexDirection="column" alignItems="center">
+        <Grid
+          item
+          xs={6}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100%"
+                height: "100%",
               }}
             >
-              <Button href="./aboutme" variant="contained" color="primary" style={buttonStyle}>
-                About Me
-              </Button>
+              <Link to="/aboutme">
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  About Me
+                </Button>
+              </Link>
             </Box>
           </Box>
           <Box bgcolor={colors[4]} sx={boxStyle}>
@@ -87,28 +95,38 @@ const Menu = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100%"
+                height: "100%",
               }}
             >
-              <Button href="./resume" variant="contained" color="primary" style={buttonStyle}>
-                Resume
-              </Button>
+              <Link to="/resume">
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  Resume
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={6} display="flex" flexDirection="column" alignItems="center">
+        <Grid
+          item
+          xs={6}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+        >
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100%"
+                height: "100%",
               }}
             >
-              <Button href="./portfolio" variant="contained" color="primary" style={buttonStyle}>
-                Portfolio
-              </Button>
+              <Link to="/portfolio">
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  Portfolio
+                </Button>
+              </Link>
             </Box>
           </Box>
           <Box bgcolor={colors[4]} sx={boxStyle}>
@@ -117,12 +135,14 @@ const Menu = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100%"
+                height: "100%",
               }}
             >
-              <Button href="./contact" variant="contained" color="primary" style={buttonStyle}>
-                Contact Me
-              </Button>
+              <Link to="/contact">
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  Contact Me
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Grid>
