@@ -14,13 +14,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/aboutme" element={<AboutMe />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<ContactForm />} />
-            <Route path="/menu" element={<Menu />} />
+            <Route index element={<Home />} />
+            <Route path="aboutme" element={<AboutMe />} />
+            <Route path="portfolio" element={<Portfolio />} />
+            <Route path="contact" element={<ContactForm />} />
+            <Route path="menu" element={<Menu />} />
           </Routes>
         </Router>
       </div>
