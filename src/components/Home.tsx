@@ -26,7 +26,7 @@ const Home = () => {
   } else if (mediumScreen) {
     bgSVG = "url(" + horizontal + ")";
     headingSize = "8rem";
-    buttonPos = -200;
+    buttonPos = -150;
     SVGsize = "90%";
   } else {
     bgSVG = "url(" + horizontal + ")";

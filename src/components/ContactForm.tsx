@@ -169,7 +169,7 @@ const Contact = () => {
                       style: textFieldStyle
                     }}
                   />
-                  {/* <Button
+                  <Button
                     type="submit"
                     sx={{
                       borderRadius: "30px",
@@ -182,7 +182,7 @@ const Contact = () => {
                     }}
                   >
                     Submit
-                  </Button> */}
+                  </Button>
                 </Form>
               </Formik>
             </Box>
