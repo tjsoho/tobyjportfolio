@@ -5,18 +5,9 @@ import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
 
 const ContentPage = () => {
-  const smallScreen = useMediaQuery(
-    "(min-width: 300px) and (max-width: 600px)"
-  );
-  const mediumScreen = useMediaQuery(
-    "(min-width: 600px) and (max-width: 1000px)"
-  );
-  const largeScreen = useMediaQuery(
-    "(min-width: 1000px) and (max-width: 1200px)"
-  );
-  const extraLargeScreen = useMediaQuery(
-    "(min-width: 1201px) and (max-width: 1400px)"
-  );
+  const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
+  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 900px)");
+  const largeScreen = useMediaQuery("(min-width: 900px) and (max-width: 1350px)");
 
   let bgSVG;
   let headingSize;
@@ -50,14 +41,14 @@ const ContentPage = () => {
     imageLeft = "calc(65% - 100px)";
     pad = "20px";
     textMargin = "100px";
-  } else if (extraLargeScreen) {
-    bgSVG = "url(" + tabletBG + ")";
-    headingSize = "6rem";
-    imageHeight = "600px";
-    imageTop = "calc(100% - 485px)";
-    imageLeft = "calc(65% - 140px)";
-    pad = "20px";
-    textMargin = "200px";
+  // } else if (extraLargeScreen) {
+  //   bgSVG = "url(" + tabletBG + ")";
+  //   headingSize = "6rem";
+  //   imageHeight = "600px";
+  //   imageTop = "calc(100% - 485px)";
+  //   imageLeft = "calc(65% - 140px)";
+  //   pad = "20px";
+  //   textMargin = "200px";
   } else {
     bgSVG = "url(" + tabletBG + ")";
     headingSize = "8rem";
