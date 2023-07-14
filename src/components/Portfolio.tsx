@@ -77,7 +77,7 @@ const Portfolio = () => {
             marginRight: "20px",
           }}
         >
-          <Link to="/menu">
+          <Link to="/menu" style={{ textDecoration: "none" }}>
             <Button
               sx={{
                 width: "150px",
@@ -120,7 +120,7 @@ const Portfolio = () => {
                   The Ultimate Travel Game
                 </Typography>
 
-                <Link to="https://tjsoho.github.io/improved-travel-quiz/">
+                <Link to="https://tjsoho.github.io/improved-travel-quiz/" style={{ textDecoration: "none" }}>
                   <Button
                     // target="_blank"
                     // rel="noopener noreferrer"
@@ -152,7 +152,7 @@ const Portfolio = () => {
                 >
                   Weather <br /> Checker
                 </Typography>
-                <Link to="https://tjsoho.github.io/weather-api/">
+                <Link to="https://tjsoho.github.io/weather-api/" style={{ textDecoration: "none" }}>
                   <Button
                     // target="_blank"
                     // rel="noopener noreferrer"
@@ -185,7 +185,7 @@ const Portfolio = () => {
                   The Travel <br /> Companion
                 </Typography>
 
-                <Link to="https://sheltered-caverns-17258.herokuapp.com/">
+                <Link to="https://sheltered-caverns-17258.herokuapp.com/" style={{ textDecoration: "none" }}>
                   <Button
                     // target="_blank"
                     // rel="noopener noreferrer"

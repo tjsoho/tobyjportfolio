@@ -12,6 +12,70 @@ const colors = [
   "#FFCF51",
 ];
 
+const DownloadLink = () => {
+  const handleDownload = () => {
+    const fileUrl = "./assets/TobyCarrollCV.pdf";
+    const fileName = "TobyCarrollCV.pdf";
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", fileUrl, true);
+    xhr.responseType = "blob";
+
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const blob = new Blob([xhr.response], { type: "application/pdf" });
+
+        // Create a temporary anchor element
+        const tempLink = document.createElement("a");
+        tempLink.href = window.URL.createObjectURL(blob);
+        tempLink.download = fileName;
+
+        // Trigger the click event of the anchor element
+        tempLink.dispatchEvent(new MouseEvent("click"));
+      }
+    };
+
+    xhr.send();
+  };
+
+  const smallScreen = useMediaQuery("(max-width: 600px)");
+
+  let boxHeight;
+  let boxWidth;
+  let fSize;
+  let buttonw;
+  if (smallScreen) {
+    boxHeight = "30vh";
+    boxWidth = "45vw";
+    fSize = "15px";
+    buttonw = "130px";
+  } else {
+    boxHeight = "40vh";
+    boxWidth = "40vw";
+    fSize = "20px";
+    buttonw = "250px";
+  }
+
+
+
+  const buttonStyle = {
+    backgroundColor: "white",
+    color: "black",
+    fontSize: fSize,
+    padding: "10px 20px",
+    width: buttonw,
+    height: "25%",
+  };
+
+  return (
+    <a onClick={handleDownload} style={{ textDecoration: "none" }}>
+       <Button variant="contained" color="primary" style={buttonStyle}>
+        Resume
+      </Button>
+    </a>
+  );
+};
+
 const Menu = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
 
@@ -84,7 +148,7 @@ const Menu = () => {
                 height: "100%",
               }}
             >
-              <Link to="/aboutme">
+              <Link to="/aboutme" style={{ textDecoration: "none" }}>
                 <Button variant="contained" color="primary" style={buttonStyle}>
                   About Me
                 </Button>
@@ -103,11 +167,7 @@ const Menu = () => {
                 height: "100%",
               }}
             >
-              <Link to="/resume">
-                <Button variant="contained" color="primary" style={buttonStyle}>
-                  Resume
-                </Button>
-              </Link>
+              <DownloadLink />
             </Box>
           </Box>
         </Grid>
@@ -130,7 +190,7 @@ const Menu = () => {
                 height: "100%",
               }}
             >
-              <Link to="/portfolio">
+              <Link to="/portfolio" style={{ textDecoration: "none" }}>
                 <Button variant="contained" color="primary" style={buttonStyle}>
                   Portfolio
                 </Button>
@@ -149,7 +209,7 @@ const Menu = () => {
                 height: "100%",
               }}
             >
-              <Link to="/contact">
+              <Link to="/contact" style={{ textDecoration: "none" }}>
                 <Button variant="contained" color="primary" style={buttonStyle}>
                   Contact Me
                 </Button>

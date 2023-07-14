@@ -118,7 +118,7 @@ const ContentPage = () => {
               marginRight: "20px",
             }}
           >
-            <Link to="/menu">
+            <Link to="/menu" style={{ textDecoration: "none" }}>
               <Button
                 sx={{
                   width: "150px",

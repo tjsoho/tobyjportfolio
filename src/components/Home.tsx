@@ -4,6 +4,8 @@ import React from "react";
 import verticalSVG from "../assets/vertical-hello.svg";
 import horizontal from "../assets/horizontal.svg";
 import { Link } from "react-router-dom";
+import AboutMe from "./AboutMe";
+import Portfolio from "./Portfolio";
 
 const Home = () => {
   const smallScreen = useMediaQuery(
@@ -52,7 +54,7 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <Link to="/menu">
+        <Link to="/menu" style={{ textDecoration: "none" }}>
           <Button
             sx={{
               width: "150px",
@@ -73,6 +75,8 @@ const Home = () => {
         </Typography>
         <Typography variant="h3">UX/UI Designer</Typography>
       </Box>
+      <AboutMe />
+      <Portfolio />
     </div>
   );
 };
