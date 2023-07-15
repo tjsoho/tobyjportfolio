@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid, Button, useMediaQuery } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const colors = [
   "#FFE597",
@@ -56,8 +57,6 @@ const DownloadLink = () => {
     buttonw = "250px";
   }
 
-
-
   const buttonStyle = {
     backgroundColor: "white",
     color: "black",
@@ -69,7 +68,7 @@ const DownloadLink = () => {
 
   return (
     <a onClick={handleDownload} style={{ textDecoration: "none" }}>
-       <Button variant="contained" color="primary" style={buttonStyle}>
+      <Button variant="contained" color="primary" style={buttonStyle}>
         Resume
       </Button>
     </a>
@@ -218,6 +217,7 @@ const Menu = () => {
           </Box>
         </Grid>
       </Grid>
+      <Footer />
     </Box>
   );
 };

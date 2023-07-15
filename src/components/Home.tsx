@@ -6,6 +6,7 @@ import horizontal from "../assets/horizontal.svg";
 import { Link } from "react-router-dom";
 import AboutMe from "./AboutMe";
 import Portfolio from "./Portfolio";
+import Footer from "./Footer";
 
 const Home = () => {
   const smallScreen = useMediaQuery(
@@ -74,6 +75,7 @@ const Home = () => {
           Toby J
         </Typography>
         <Typography variant="h3">UX/UI Designer</Typography>
+        <Footer />
       </Box>
       <AboutMe />
       <Portfolio />

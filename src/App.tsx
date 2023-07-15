@@ -9,7 +9,7 @@ import Portfolio from "./components/Portfolio";
 import AboutMe from "./components/AboutMe";
 import ContactForm from "./components/ContactForm";
 import Menu from "./components/Menu";
-// import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
             <Route path="menu" element={<Menu />} />
           </Routes>
         </Router>
+        
       </div>
     </ThemeProvider>
   );
