@@ -3,6 +3,8 @@ import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
+import colourBG2 from "../assets/colourBG2.svg";
+import colourBG3 from "../assets/colourBG3.svg";
 
 const ContentPage = () => {
   const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
