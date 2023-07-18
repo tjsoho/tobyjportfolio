@@ -9,6 +9,7 @@ import Portfolio from "./components/Portfolio";
 import AboutMe from "./components/AboutMe";
 import ContactForm from "./components/ContactForm";
 import Menu from "./components/Menu";
+import Background from "./components/Background";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<ContactForm />} />
             <Route path="menu" element={<Menu />} />
+            <Route path="background" element={<Background />} />
           </Routes>
         </Router>
         

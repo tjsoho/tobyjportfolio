@@ -3,10 +3,10 @@ import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
-import colourBG2 from "../assets/colourBG2.svg";
-import colourBG3 from "../assets/colourBG3.svg";
+import Background from "./Background";
 
-const ContentPage = () => {
+
+const AboutMe = () => {
   const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
   const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 900px)");
   const largeScreen = useMediaQuery("(min-width: 900px) and (max-width: 1350px)");
@@ -28,7 +28,7 @@ const ContentPage = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (mediumScreen) {
-    bgSVG = "url(" + tabletBG + ")";
+    bgSVG = "url(" + Background + ")";
     headingSize = "4rem";
     imageHeight = "430px";
     imageTop = "calc(100% - 348px)";
@@ -36,7 +36,7 @@ const ContentPage = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (largeScreen) {
-    bgSVG = "url(" + tabletBG + ")";
+    bgSVG = "url(" + Background + ")";
     headingSize = "5rem";
     imageHeight = "500px";
     imageTop = "calc(100% - 404px)";
@@ -200,4 +200,4 @@ const ContentPage = () => {
   );
 };
 
-export default ContentPage;
+export default AboutMe;
