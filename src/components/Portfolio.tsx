@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
+import {
+  Grid,
+  Box,
+  useMediaQuery,
+  Typography,
+  Button,
+  Switch,
+} from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/largeSVG.svg";
 import travel from "../assets/travel.svg";
@@ -7,7 +14,9 @@ import weather from "../assets/weather.svg";
 import note from "../assets/notes.svg";
 import password from "../assets/padlock.svg";
 import { Link } from "react-router-dom";
-import MobileFrame from "./MobileFrame";
+import bw from "../assets/bw.svg";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Portfolio = () => {
   const smallScreen = useMediaQuery(
@@ -16,7 +25,7 @@ const Portfolio = () => {
   const mediumScreen = useMediaQuery(
     "(min-width: 600px) and (max-width: 1350px)"
   );
-  
+  const [bwMode, setBwMode] = useState(false);
 
   let bgSVG;
   if (smallScreen) {
@@ -26,6 +35,10 @@ const Portfolio = () => {
   } else {
     bgSVG = "url(" + tabletBG + ")";
   }
+
+  const handleToggle = () => {
+    setBwMode(!bwMode);
+  };
 
   const glassMorphismStyles = {
     backdropFilter: "blur(55px) brightness(80%)",
@@ -64,13 +77,16 @@ const Portfolio = () => {
         sx={{
           height: "100vh",
           width: "100vw",
-          backgroundImage: bgSVG,
+          backgroundImage: `url(${bwMode ? bw : tabletBG})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "40px",
         }}
       >
+        <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
+          <Switch checked={bwMode} onChange={handleToggle} color="primary" />
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -102,136 +118,142 @@ const Portfolio = () => {
             width: "100%",
           }}
         >
-          <Grid item xs={12} sm={6} md={6} lg={3}>
+          <Carousel>
             {/* CARD 1 */}
-
-            <Box sx={glassMorphismStyles}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={travel} alt="" style={imageStyle} />
-                <Typography
-                  variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}
+            <div>
+              <Box sx={glassMorphismStyles}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  The Ultimate Travel Game
-                </Typography>
-
-                <Link to="https://tjsoho.github.io/improved-travel-quiz/" style={{ textDecoration: "none" }}>
-                  <Button
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    style={buttonStyle}
+                  <img src={travel} alt="" style={imageStyle} />
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "white", textAlign: "center" }}
                   >
-                    PLAY
-                  </Button>
-                </Link>
+                    The Ultimate Travel Game
+                  </Typography>
+
+                  <Link
+                    to="https://tjsoho.github.io/improved-travel-quiz/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      style={buttonStyle}
+                    >
+                      PLAY
+                    </Button>
+                  </Link>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
+            </div>
 
-          {/* CARD 2 */}
-
-          <Grid item xs={12} sm={6} md={6} lg={3}>
-            <Box sx={glassMorphismStyles}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={weather} alt="" style={imageStyle} />
-                <Typography
-                  variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}
+            {/* CARD 2 */}
+            <div>
+              <Box sx={glassMorphismStyles}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  Weather <br /> Checker
-                </Typography>
-                <Link to="https://tjsoho.github.io/weather-api/" style={{ textDecoration: "none" }}>
-                  <Button
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    style={buttonStyle}
+                  <img src={weather} alt="" style={imageStyle} />
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "white", textAlign: "center" }}
                   >
-                    CHECK
-                  </Button>
-                </Link>
+                    Weather <br /> Checker
+                  </Typography>
+                  <Link
+                    to="https://tjsoho.github.io/weather-api/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      style={buttonStyle}
+                    >
+                      CHECK
+                    </Button>
+                  </Link>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
-
-          {/* CARD 3 */}
-
-          <Grid item xs={12} sm={6} md={6} lg={3}>
-            <Box sx={glassMorphismStyles}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={note} alt="" style={imageStyle} />
-                <Typography
-                  variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}
+            </div>
+            {/* CARD 3 */}
+            <div>
+              <Box sx={glassMorphismStyles}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  The Travel <br /> Companion
-                </Typography>
-
-                <Link to="https://sheltered-caverns-17258.herokuapp.com/" style={{ textDecoration: "none" }}>
-                  <Button
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    style={buttonStyle}
+                  <img src={note} alt="" style={imageStyle} />
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "white", textAlign: "center" }}
                   >
-                    LET'S GO
-                  </Button>
-                </Link>
+                    The Travel <br /> Companion
+                  </Typography>
+
+                  <Link
+                    to="https://sheltered-caverns-17258.herokuapp.com/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      style={buttonStyle}
+                    >
+                      LET'S GO
+                    </Button>
+                  </Link>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
+            </div>
 
-          {/* CARD 4 */}
-
-          <Grid item xs={12} sm={6} md={6} lg={3}>
-            <Box sx={glassMorphismStyles}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={password} alt="" style={imageStyle} />
-                <Typography
-                  variant="h4"
-                  sx={{ color: "white", textAlign: "center" }}
+            {/* CARD 4 */}
+            <div>
+              <Box sx={glassMorphismStyles}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  Passwod Generator
-                </Typography>
-
-                <Link to="https://tjsoho.github.io/w3-password-generator/">
-                  <Button
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    style={buttonStyle}
+                  <img src={password} alt="" style={imageStyle} />
+                  <Typography
+                    variant="h4"
+                    sx={{ color: "white", textAlign: "center" }}
                   >
-                    GENERATE
-                  </Button>
-                </Link>
+                    Passwod Generator
+                  </Typography>
+
+                  <Link to="https://tjsoho.github.io/w3-password-generator/">
+                    <Button
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                      style={buttonStyle}
+                    >
+                      GENERATE
+                    </Button>
+                  </Link>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
+            </div>
+          </Carousel>
         </Box>
       </Box>
     </Grid>
