@@ -19,12 +19,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Portfolio = () => {
-  const smallScreen = useMediaQuery(
-    "(min-width: 300px) and (max-width: 600px)"
-  );
-  const mediumScreen = useMediaQuery(
-    "(min-width: 600px) and (max-width: 1350px)"
-  );
+  const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
+  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 1350px)");
   const [bwMode, setBwMode] = useState(false);
 
   let bgSVG;
@@ -42,13 +38,12 @@ const Portfolio = () => {
 
   const glassMorphismStyles = {
     backdropFilter: "blur(55px) brightness(80%)",
-    background:
-      "linear-gradient(45deg, rgba(94, 64, 64, 0.3) 0%, rgba(64, 64, 64, 0.08) 70%)",
+    background: "linear-gradient(45deg, rgba(94, 64, 64, 0.3) 0%, rgba(64, 64, 64, 0.08) 70%)",
     borderRadius: "20px",
     border: "1px solid",
     borderColor: "#D9D9D9",
     height: "400px",
-    width: "250px",
+    width: "350px",
     display: "flex",
     flexDirection: "column",
     padding: "20px",
@@ -71,6 +66,34 @@ const Portfolio = () => {
     height: "180px",
   };
 
+  const carouselStyle = {
+    "& .carousel .control-arrow": {
+      backgroundColor: "transparent",
+      color: "white",
+      height: "50px",
+      width: "50px",
+      top: "calc(50% - 25px)",
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
+    },
+    "& .carousel .control-arrow:before": {
+      fontSize: "60px",
+      color: "black",
+    },
+    "& .carousel .carousel-status": {
+      display: "none",
+    },
+    "& .carousel .control-prev.control-arrow": {
+      left: "450px",
+    },
+    "& .carousel .control-next.control-arrow": {
+      right: "450px",
+    },
+  };
+  
+  
+
   return (
     <Grid container>
       <Box
@@ -81,7 +104,7 @@ const Portfolio = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          padding: "40px",
+          
         }}
       >
         <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
@@ -92,7 +115,7 @@ const Portfolio = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-end",
-            marginRight: "20px",
+            marginRight: "10px",
           }}
         >
           <Link to="/menu" style={{ textDecoration: "none" }}>
@@ -101,7 +124,7 @@ const Portfolio = () => {
                 width: "150px",
                 height: "50px",
                 fontSize: 20,
-                margin: "20px",
+                margin: "10px",
               }}
             >
               Menu
@@ -112,148 +135,130 @@ const Portfolio = () => {
           sx={{
             display: "flex",
             flexDirection: "row",
+            justifyContent: "center",
             alignItems: "center",
             flexWrap: "wrap",
-            height: "80%",
-            width: "100%",
+            height: "85vh",
+            width: "100vw",
           }}
         >
-          <Carousel>
-            {/* CARD 1 */}
-            <div>
-              <Box sx={glassMorphismStyles}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img src={travel} alt="" style={imageStyle} />
-                  <Typography
-                    variant="h4"
-                    sx={{ color: "white", textAlign: "center" }}
+          <Box sx={carouselStyle}>
+            <Carousel>
+              {/* CARD 1 */}
+              <div>
+                <Box sx={glassMorphismStyles}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    The Ultimate Travel Game
-                  </Typography>
-
-                  <Link
-                    to="https://tjsoho.github.io/improved-travel-quiz/"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button
-                      // target="_blank"
-                      // rel="noopener noreferrer"
-                      style={buttonStyle}
+                    <img src={travel} alt="" style={imageStyle} />
+                    <Typography
+                      variant="h4"
+                      sx={{ color: "white", textAlign: "center" }}
                     >
-                      PLAY
-                    </Button>
-                  </Link>
-                </Box>
-              </Box>
-            </div>
+                      The Ultimate Travel Game
+                    </Typography>
 
-            {/* CARD 2 */}
-            <div>
-              <Box sx={glassMorphismStyles}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img src={weather} alt="" style={imageStyle} />
-                  <Typography
-                    variant="h4"
-                    sx={{ color: "white", textAlign: "center" }}
-                  >
-                    Weather <br /> Checker
-                  </Typography>
-                  <Link
-                    to="https://tjsoho.github.io/weather-api/"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button
-                      // target="_blank"
-                      // rel="noopener noreferrer"
-                      style={buttonStyle}
+                    <Link
+                      to="https://tjsoho.github.io/improved-travel-quiz/"
+                      style={{ textDecoration: "none" }}
                     >
-                      CHECK
-                    </Button>
-                  </Link>
+                      <Button style={buttonStyle}>PLAY</Button>
+                    </Link>
+                  </Box>
                 </Box>
-              </Box>
-            </div>
-            {/* CARD 3 */}
-            <div>
-              <Box sx={glassMorphismStyles}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img src={note} alt="" style={imageStyle} />
-                  <Typography
-                    variant="h4"
-                    sx={{ color: "white", textAlign: "center" }}
-                  >
-                    The Travel <br /> Companion
-                  </Typography>
+              </div>
 
-                  <Link
-                    to="https://sheltered-caverns-17258.herokuapp.com/"
-                    style={{ textDecoration: "none" }}
+              {/* CARD 2 */}
+              <div>
+                <Box sx={glassMorphismStyles}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    <Button
-                      // target="_blank"
-                      // rel="noopener noreferrer"
-                      style={buttonStyle}
+                    <img src={weather} alt="" style={imageStyle} />
+                    <Typography
+                      variant="h4"
+                      sx={{ color: "white", textAlign: "center" }}
                     >
-                      LET'S GO
-                    </Button>
-                  </Link>
-                </Box>
-              </Box>
-            </div>
-
-            {/* CARD 4 */}
-            <div>
-              <Box sx={glassMorphismStyles}>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img src={password} alt="" style={imageStyle} />
-                  <Typography
-                    variant="h4"
-                    sx={{ color: "white", textAlign: "center" }}
-                  >
-                    Passwod Generator
-                  </Typography>
-
-                  <Link to="https://tjsoho.github.io/w3-password-generator/">
-                    <Button
-                      // target="_blank"
-                      // rel="noopener noreferrer"
-                      style={buttonStyle}
+                      Weather Checker
+                    </Typography>
+                    <Link
+                      to="https://tjsoho.github.io/weather-api/"
+                      style={{ textDecoration: "none" }}
                     >
-                      GENERATE
-                    </Button>
-                  </Link>
+                      <Button style={buttonStyle}>CHECK</Button>
+                    </Link>
+                  </Box>
                 </Box>
-              </Box>
-            </div>
-          </Carousel>
+              </div>
+              {/* CARD 3 */}
+              <div>
+                <Box sx={glassMorphismStyles}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={note} alt="" style={imageStyle} />
+                    <Typography
+                      variant="h4"
+                      sx={{ color: "white", textAlign: "center" }}
+                    >
+                      The Travel Companion
+                    </Typography>
+
+                    <Link
+                      to="https://sheltered-caverns-17258.herokuapp.com/"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Button style={buttonStyle}>LET'S GO</Button>
+                    </Link>
+                  </Box>
+                </Box>
+              </div>
+
+              {/* CARD 4 */}
+              <div>
+                <Box sx={glassMorphismStyles}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={password} alt="" style={imageStyle} />
+                    <Typography
+                      variant="h4"
+                      sx={{ color: "white", textAlign: "center" }}
+                    >
+                      Password Generator
+                    </Typography>
+
+                    <Link
+                      to="https://tjsoho.github.io/w3-password-generator/"
+                      style={{ textDecoration: "none" }}
+                    >
+                      <Button style={buttonStyle}>GENERATE</Button>
+                    </Link>
+                  </Box>
+                </Box>
+              </div>
+            </Carousel>
+          </Box>
         </Box>
       </Box>
     </Grid>

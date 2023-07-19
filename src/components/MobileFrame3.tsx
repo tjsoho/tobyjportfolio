@@ -1,9 +1,9 @@
 import { Box } from "@mui/system";
 import React from "react";
 import mobileFrame from "../assets/mobileshadow.svg";
-import guitarHome from "../assets/guitarHome.svg";
-import guitarTune from "../assets/guitarTune.svg";
-import bassTune from "../assets/bassTune.svg";
+import bsp1 from "../assets/bsp1.svg";
+import bsp2 from "../assets/bsp2.svg";
+import bsp3 from "../assets/bsp3.svg";
 
 const MobileF = () => {
   return (
@@ -40,7 +40,7 @@ const MobileF = () => {
         }}
       >
         <img
-          src={guitarHome}
+          src={bsp3}
           alt="shadow"
           style={{
             maxHeight: "480px",
@@ -49,7 +49,7 @@ const MobileF = () => {
           }}
         />
         <img
-          src={guitarTune}
+          src={bsp2}
           alt="shadow"
           style={{
             maxHeight: "100%",
@@ -58,7 +58,7 @@ const MobileF = () => {
           }}
         />
         <img
-          src={bassTune}
+          src={bsp1}
           alt="shadow"
           style={{
             maxHeight: "100%",

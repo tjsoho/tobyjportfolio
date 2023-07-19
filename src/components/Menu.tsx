@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Grid, Button, useMediaQuery, Switch } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import bw from "../assets/bw.svg";
+import Modal from "./Modal";
 
 const colors = [
   "#FFE597",
@@ -41,22 +42,16 @@ const DownloadLink = () => {
   };
 
   const smallScreen = useMediaQuery("(max-width: 600px)");
+  const [fSize, setFSize] = useState("20px");
+  const buttonw = "250px";
 
-  let boxHeight;
-  let boxWidth;
-  let fSize;
-  let buttonw;
-  if (smallScreen) {
-    boxHeight = "30vh";
-    boxWidth = "45vw";
-    fSize = "15px";
-    buttonw = "130px";
-  } else {
-    boxHeight = "40vh";
-    boxWidth = "40vw";
-    fSize = "20px";
-    buttonw = "250px";
-  }
+  useEffect(() => {
+    if (smallScreen) {
+      setFSize("15px");
+    } else {
+      setFSize("20px");
+    }
+  }, [smallScreen]);
 
   const buttonStyle = {
     backgroundColor: "white",
@@ -79,21 +74,22 @@ const DownloadLink = () => {
 const Menu = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
   const [bwMode, setBwMode] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   let boxHeight;
   let boxWidth;
   let fSize;
   let buttonw;
   if (smallScreen) {
-    boxHeight = "30vh";
+    boxHeight = "20vh";
     boxWidth = "45vw";
     fSize = "15px";
     buttonw = "130px";
   } else {
-    boxHeight = "40vh";
+    boxHeight = "25vh";
     boxWidth = "40vw";
     fSize = "20px";
-    buttonw = "250px";
+    buttonw = "230px";
   }
 
   const handleToggle = () => {
@@ -119,6 +115,16 @@ const Menu = () => {
     width: buttonw,
     height: "25%",
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpenModal(true);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <Box
@@ -146,7 +152,6 @@ const Menu = () => {
           alignItems="center"
         >
           {/* ------------------------ */}
-
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -165,6 +170,27 @@ const Menu = () => {
           </Box>
 
           {/* ------------------------ */}
+        
+        
+
+          {/* ------------------------ */}
+          <Box bgcolor={colors[4]} sx={boxStyle}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Link to="/uidesigns" style={{ textDecoration: "none" }}>
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  DESIGNS
+                </Button>
+              </Link>
+            </Box>
+          </Box>
+      {/* ------------------------ */}
 
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
@@ -178,6 +204,8 @@ const Menu = () => {
               <DownloadLink />
             </Box>
           </Box>
+
+          {/* ------------------------ */}
         </Grid>
 
         <Grid
@@ -188,7 +216,6 @@ const Menu = () => {
           alignItems="center"
         >
           {/* ------------------------ */}
-
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -207,7 +234,6 @@ const Menu = () => {
           </Box>
 
           {/* ------------------------ */}
-
           <Box bgcolor={colors[4]} sx={boxStyle}>
             <Box
               sx={{
@@ -224,9 +250,31 @@ const Menu = () => {
               </Link>
             </Box>
           </Box>
+
+          {/* ------------------------ */}
+          <Box bgcolor={colors[4]} sx={boxStyle}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Button variant="contained" color="primary" style={buttonStyle}>
+                  HOME
+                </Button>
+              </Link>
+            </Box>
+          </Box>
+
+          {/* ------------------------ */}
+         
         </Grid>
       </Grid>
       <Footer />
+      {openModal && <Modal />}
     </Box>
   );
 };

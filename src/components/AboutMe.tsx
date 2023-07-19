@@ -6,6 +6,7 @@ import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
 import bw from "../assets/bw.svg";
 
+
 const AboutMe = () => {
   const smallScreen = useMediaQuery(
     "(min-width: 300px) and (max-width: 600px)"
@@ -17,6 +18,8 @@ const AboutMe = () => {
     "(min-width: 900px) and (max-width: 1350px)"
   );
   const [bwMode, setBwMode] = useState(false);
+
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
 
   let bgSVG;
   let headingSize;
@@ -45,17 +48,17 @@ const AboutMe = () => {
   } else if (largeScreen) {
     bgSVG = "url(" + tabletBG + ")";
     headingSize = "5rem";
-    imageHeight = "500px";
-    imageTop = "calc(100% - 404px)";
-    imageLeft = "calc(65% - 100px)";
+    imageHeight = "450px";
+    imageTop = "calc(100% - 365px)";
+    imageLeft = "calc(65% - 70px)";
     pad = "20px";
     textMargin = "100px";
   } else {
     bgSVG = "url(" + tabletBG + ")";
     headingSize = "8rem";
-    imageHeight = "700px";
+    imageHeight = "650px";
     imageTop = "calc(100% - 569px)";
-    imageLeft = "calc(65% - 140px)";
+    imageLeft = "calc(65% - 120px)";
     pad = "80px";
     textMargin = "250px";
   }
@@ -64,18 +67,7 @@ const AboutMe = () => {
     setBwMode(!bwMode);
   };
 
-  const scrollbarStyles = {
-    "&::-webkit-scrollbar": {
-      width: "0rem",
-      backgroundColor: "transparent",
-    },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "transparent",
-    },
-    "&::-webkit-scrollbar-thumb:hover": {
-      backgroundColor: "#aaa",
-    },
-  };
+
 
   const glassMorphismStyles = {
     backdropFilter: "blur(55px) brightness(100%)",
@@ -97,14 +89,19 @@ const AboutMe = () => {
     justifyContent: "flex-start",
   };
 
+
+
   return (
     <Grid container>
+      
       <Grid item xs={12} md={6}>
         <Box
           sx={{
             height: "100vh",
             width: "100vw",
-            backgroundImage: `url(${bwMode ? bw : tabletBG})`,
+            backgroundImage: isSmallScreen
+            ? `url(${bwMode ? bw : mobileBG})`
+            : `url(${bwMode ? bw : tabletBG})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -120,7 +117,7 @@ const AboutMe = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-end",
-              marginRight: "20px",
+              marginRight: "15px",
             }}
           >
             <Link to="/menu" style={{ textDecoration: "none" }}>
@@ -129,19 +126,19 @@ const AboutMe = () => {
                   width: "150px",
                   height: "45px",
                   fontSize: 20,
-                  margin: "20px",
+                  margin: "10px",
                 }}
               >
                 Menu
               </Button>
             </Link>
           </Box>
-          <Box sx={{ ...glassMorphismStyles, ...scrollbarStyles }}>
+          <Box sx={{ ...glassMorphismStyles,  }}>
             <Box>
               <div style={{ position: "relative" }}>
                 <Typography
                   variant="h1"
-                  sx={{ marginBottom: "10px", fontSize: headingSize }}
+                  sx={{ marginBottom: "10px", marginLeft: "25px", fontSize: headingSize }}
                 >
                   About
                   <br />
@@ -159,7 +156,19 @@ const AboutMe = () => {
                 >
                   <Typography
                     variant="body1"
-                    sx={{ marginRight: textMargin, padding: "30px" }}
+                    sx={{ marginRight: textMargin, paddingRight: "60px", paddingLeft: "25px",     overflowY: "auto", // Enable vertical scrolling
+                    "&::-webkit-scrollbar": {
+                      marginLeft: "0.5rem",
+                      height: "0.1em", // Adjust the width of the scrollbar as needed
+                      width: "0.1em", // Adjust the width of the scrollbar as needed
+                    },
+                    "&::-webkit-scrollbar-track": {
+                      background: "transparent", // Make the scrollbar track transparent
+                    },
+                    "&::-webkit-scrollbar-thumb": {
+                      width: "1px",
+                      background: "white", // Make the scrollbar thumb transparent
+                    }, }}
                   >
                     Born with an innate passion for creation, this multifaceted
                     artist embarked on a transformative journey, exploring

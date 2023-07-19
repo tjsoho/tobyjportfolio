@@ -9,11 +9,12 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
+  Switch,
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-
+import bw from "../assets/bw.svg";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -22,6 +23,11 @@ const Contact = () => {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [isDialogOpen, setDialogOpen] = useState(false);
+  const [bwMode, setBwMode] = useState(false);
+
+  const handleToggle = () => {
+    setBwMode(!bwMode);
+  };
 
   const handleSubmitForm = (values: any) => {
     // Validate name field
@@ -51,41 +57,7 @@ const Contact = () => {
     return emailRegex.test(email);
   };
 
-  const smallScreen = useMediaQuery(
-    "(min-width: 300px) and (max-width: 600px)"
-  );
-  const mediumScreen = useMediaQuery(
-    "(min-width: 600px) and (max-width: 900px)"
-  );
-  const largeScreen = useMediaQuery(
-    "(min-width: 900px) and (max-width: 1350px)"
-  );
-
-  let bgSVG;
-  let headingSize;
-  let morphWidth;
-  let morphHeight;
-  if (smallScreen) {
-    bgSVG = "url(" + mobileBG + ")";
-    headingSize = "3.3rem";
-    morphWidth = "75%";
-    morphHeight = "75%";
-  } else if (mediumScreen) {
-    bgSVG = "url(" + tabletBG + ")";
-    headingSize = "3.6rem";
-    morphWidth = "75%";
-    morphHeight = "75%";
-  } else if (largeScreen) {
-    bgSVG = "url(" + tabletBG + ")";
-    headingSize = "4rem";
-    morphWidth = "55%";
-    morphHeight = "85%";
-  } else {
-    bgSVG = "url(" + tabletBG + ")";
-    headingSize = "5rem";
-    morphWidth = "55%";
-    morphHeight = "85%";
-  }
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
 
   const glassMorphismStyles = {
     backdropFilter: "blur(55px) brightness(100%)",
@@ -94,8 +66,8 @@ const Contact = () => {
     borderRadius: "20px",
     border: "1px solid",
     borderColor: "#D9D9D9",
-    height: morphHeight,
-    width: morphWidth,
+    height: "75%",
+    width: "75%",
     position: "absolute",
     top: "50%",
     left: "50%",
@@ -112,13 +84,18 @@ const Contact = () => {
   };
 
   return (
-    <Grid>
+    <Grid container>
+      <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
+        <Switch checked={bwMode} onChange={handleToggle} color="primary" />
+      </Box>
       <Grid item xs={12} md={6}>
         <Box
           sx={{
             height: "100vh",
             width: "100vw",
-            backgroundImage: bgSVG,
+            backgroundImage: isSmallScreen
+              ? `url(${bwMode ? bw : mobileBG})`
+              : `url(${bwMode ? bw : tabletBG})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -131,7 +108,7 @@ const Contact = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-end",
-              marginRight: "20px",
+              marginRight: "0px",
             }}
           >
             <Link to="/menu" style={{ textDecoration: "none" }}>
@@ -140,7 +117,7 @@ const Contact = () => {
                   width: "150px",
                   height: "45px",
                   fontSize: 20,
-                  margin: "20px",
+                  margin: "10px",
                 }}
               >
                 Menu
@@ -165,7 +142,7 @@ const Contact = () => {
                 color="default"
                 sx={{
                   letterSpacing: "4px",
-                  fontSize: headingSize,
+                  fontSize: "3.3rem",
                   mb: 2,
                   textAlign: "left",
                 }}
