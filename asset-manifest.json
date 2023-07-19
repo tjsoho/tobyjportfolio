@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tobyjportfolio/static/css/main.c7ec3132.css",
-    "main.js": "/tobyjportfolio/static/js/main.55813d6a.js",
+    "main.js": "/tobyjportfolio/static/js/main.eec3d521.js",
     "static/js/787.28cb0dcd.chunk.js": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js",
     "static/media/TobyPortraitNoBG.png": "/tobyjportfolio/static/media/TobyPortraitNoBG.04ece165dc341ff789b6.png",
     "static/media/stackoverflow.svg": "/tobyjportfolio/static/media/stackoverflow.443f544ce99ca1889144c682da02ed55.svg",
@@ -16,13 +16,15 @@
     "static/media/tabletBG.svg": "/tobyjportfolio/static/media/tabletBG.e4a0dabf7c9b8b55861235c20ab2adf4.svg",
     "index.html": "/tobyjportfolio/index.html",
     "static/media/largeSVG.svg": "/tobyjportfolio/static/media/largeSVG.d34094dd04a20c4ae775452de718984a.svg",
+    "static/media/tabletBG3.svg": "/tobyjportfolio/static/media/tabletBG3.ec39ce6e3844589d273fa67c85bc9472.svg",
+    "static/media/tabletBG2.svg": "/tobyjportfolio/static/media/tabletBG2.0e4643e653394b32519e13dccc940447.svg",
     "static/media/padlock.svg": "/tobyjportfolio/static/media/padlock.3d3886f910f3c094a13556b841bc65e3.svg",
     "main.c7ec3132.css.map": "/tobyjportfolio/static/css/main.c7ec3132.css.map",
-    "main.55813d6a.js.map": "/tobyjportfolio/static/js/main.55813d6a.js.map",
+    "main.eec3d521.js.map": "/tobyjportfolio/static/js/main.eec3d521.js.map",
     "787.28cb0dcd.chunk.js.map": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c7ec3132.css",
-    "static/js/main.55813d6a.js"
+    "static/js/main.eec3d521.js"
   ]
 }
