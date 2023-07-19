@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, useMediaQuery, Switch } from "@mui/material";
+import { Box, Grid, useMediaQuery, Switch, Button } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import Footer from "./Footer";
 import MobileFrame from "./MobileFrame";
 import MobileFrame2 from "./MobileFrame2";
 import MobileFrame3 from "./MobileFrame3";
 import bw from "../assets/bw.svg";
+import { Link } from "react-router-dom";
 
 
 
@@ -18,16 +19,19 @@ const UiDesigns = () => {
   let boxWidth;
   let fSize;
   let buttonw;
+  let buttonPos;
   if (smallScreen) {
-    boxHeight = "30vh";
+    boxHeight = "contain";
     boxWidth = "45vw";
     fSize = "15px";
     buttonw = "130px";
+    buttonPos = -200;
   } else {
-    boxHeight = "40vh";
+    boxHeight = "100vh";
     boxWidth = "40vw";
     fSize = "20px";
     buttonw = "250px";
+     buttonPos = -250;
   }
 
   const handleToggle = () => {
@@ -45,8 +49,7 @@ const UiDesigns = () => {
       height="100vh"
       sx={{
         backgroundImage: `url(${bwMode ? bw : tabletBG})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundRepeat: "repeat",
         backgroundPosition: "center",
         padding: "0 20px",
       }}
@@ -54,10 +57,31 @@ const UiDesigns = () => {
       <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
         <Switch checked={bwMode} onChange={handleToggle} color="primary" />
       </Box>
+      <Box position="absolute" top={0} right={0}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              marginRight: "0px",
+            }}
+          >
+            <Link to="/menu" style={{ textDecoration: "none" }}>
+              <Button
+                sx={{
+                  width: "150px",
+                  height: "45px",
+                  fontSize: 20,
+                  margin: "10px",
+                }}
+              >
+                Menu
+              </Button>
+            </Link>
+          </Box>
       <Grid container spacing={4}>
         <Grid
           item
-          xs={4}
+          xs={12} sm={12} md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -79,7 +103,7 @@ const UiDesigns = () => {
 
         <Grid
           item
-          xs={4}
+          xs={12} sm={12} md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -100,7 +124,7 @@ const UiDesigns = () => {
         </Grid>
         <Grid
           item
-          xs={4}
+          xs={12} sm={12} md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"

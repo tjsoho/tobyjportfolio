@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/tobyjportfolio/static/css/main.c7ec3132.css",
-    "main.js": "/tobyjportfolio/static/js/main.68bc0c3e.js",
+    "main.css": "/tobyjportfolio/static/css/main.68e5f882.css",
+    "main.js": "/tobyjportfolio/static/js/main.c0d26e31.js",
     "static/js/787.28cb0dcd.chunk.js": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js",
     "static/media/guitarHome.svg": "/tobyjportfolio/static/media/guitarHome.ff17a2370945d811020c0556104231ff.svg",
     "static/media/bassTune.svg": "/tobyjportfolio/static/media/bassTune.ebe423b34137beef596302408567f949.svg",
     "static/media/guitarTune.svg": "/tobyjportfolio/static/media/guitarTune.778d264625a560bf90e01cdce3101461.svg",
+    "static/media/bsp2.svg": "/tobyjportfolio/static/media/bsp2.c9fbb587e23091ac04f938ad29e023ab.svg",
+    "static/media/bsp1.svg": "/tobyjportfolio/static/media/bsp1.bbcb0eb883184b8a5bd3aa7dd118f5ff.svg",
     "static/media/shadow1.png": "/tobyjportfolio/static/media/shadow1.2fed8c17c16f67a3b22b.png",
     "static/media/TobyPortraitNoBG.png": "/tobyjportfolio/static/media/TobyPortraitNoBG.04ece165dc341ff789b6.png",
     "static/media/shadow2.png": "/tobyjportfolio/static/media/shadow2.25c99ff88b4f5f317569.png",
+    "static/media/bsp3.svg": "/tobyjportfolio/static/media/bsp3.917fb9a55b2e9d3179e53bcd69f2b95b.svg",
     "static/media/bw.svg": "/tobyjportfolio/static/media/bw.430ae38c98710a9963200061e45d8b83.svg",
     "static/media/stackoverflow.svg": "/tobyjportfolio/static/media/stackoverflow.443f544ce99ca1889144c682da02ed55.svg",
     "static/media/mobileshadow.svg": "/tobyjportfolio/static/media/mobileshadow.8b4e65154055cde24366acf128b54ee6.svg",
     "static/media/weather.svg": "/tobyjportfolio/static/media/weather.ec35d4241b36f28b40708033f276ac8b.svg",
+    "static/media/mobileh.svg": "/tobyjportfolio/static/media/mobileh.f092ac7a3fd8777f27151d314f3bafaa.svg",
     "static/media/vertical-hello.svg": "/tobyjportfolio/static/media/vertical-hello.770d8205135f853630a704b70ce2e16a.svg",
     "static/media/horizontal.svg": "/tobyjportfolio/static/media/horizontal.b6dcaaa241b33775240ad284f2a2f620.svg",
     "static/media/travel.svg": "/tobyjportfolio/static/media/travel.358399070ebc0e1db7c5990ab8eef5f5.svg",
@@ -26,12 +30,12 @@
     "static/media/tabletBG3.svg": "/tobyjportfolio/static/media/tabletBG3.ec39ce6e3844589d273fa67c85bc9472.svg",
     "static/media/tabletBG2.svg": "/tobyjportfolio/static/media/tabletBG2.0e4643e653394b32519e13dccc940447.svg",
     "static/media/padlock.svg": "/tobyjportfolio/static/media/padlock.3d3886f910f3c094a13556b841bc65e3.svg",
-    "main.c7ec3132.css.map": "/tobyjportfolio/static/css/main.c7ec3132.css.map",
-    "main.68bc0c3e.js.map": "/tobyjportfolio/static/js/main.68bc0c3e.js.map",
+    "main.68e5f882.css.map": "/tobyjportfolio/static/css/main.68e5f882.css.map",
+    "main.c0d26e31.js.map": "/tobyjportfolio/static/js/main.c0d26e31.js.map",
     "787.28cb0dcd.chunk.js.map": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7ec3132.css",
-    "static/js/main.68bc0c3e.js"
+    "static/css/main.68e5f882.css",
+    "static/js/main.c0d26e31.js"
   ]
 }
