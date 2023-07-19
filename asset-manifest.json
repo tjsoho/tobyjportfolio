@@ -1,10 +1,17 @@
 {
   "files": {
     "main.css": "/tobyjportfolio/static/css/main.c7ec3132.css",
-    "main.js": "/tobyjportfolio/static/js/main.eec3d521.js",
+    "main.js": "/tobyjportfolio/static/js/main.68bc0c3e.js",
     "static/js/787.28cb0dcd.chunk.js": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js",
+    "static/media/guitarHome.svg": "/tobyjportfolio/static/media/guitarHome.ff17a2370945d811020c0556104231ff.svg",
+    "static/media/bassTune.svg": "/tobyjportfolio/static/media/bassTune.ebe423b34137beef596302408567f949.svg",
+    "static/media/guitarTune.svg": "/tobyjportfolio/static/media/guitarTune.778d264625a560bf90e01cdce3101461.svg",
+    "static/media/shadow1.png": "/tobyjportfolio/static/media/shadow1.2fed8c17c16f67a3b22b.png",
     "static/media/TobyPortraitNoBG.png": "/tobyjportfolio/static/media/TobyPortraitNoBG.04ece165dc341ff789b6.png",
+    "static/media/shadow2.png": "/tobyjportfolio/static/media/shadow2.25c99ff88b4f5f317569.png",
+    "static/media/bw.svg": "/tobyjportfolio/static/media/bw.430ae38c98710a9963200061e45d8b83.svg",
     "static/media/stackoverflow.svg": "/tobyjportfolio/static/media/stackoverflow.443f544ce99ca1889144c682da02ed55.svg",
+    "static/media/mobileshadow.svg": "/tobyjportfolio/static/media/mobileshadow.8b4e65154055cde24366acf128b54ee6.svg",
     "static/media/weather.svg": "/tobyjportfolio/static/media/weather.ec35d4241b36f28b40708033f276ac8b.svg",
     "static/media/vertical-hello.svg": "/tobyjportfolio/static/media/vertical-hello.770d8205135f853630a704b70ce2e16a.svg",
     "static/media/horizontal.svg": "/tobyjportfolio/static/media/horizontal.b6dcaaa241b33775240ad284f2a2f620.svg",
@@ -20,11 +27,11 @@
     "static/media/tabletBG2.svg": "/tobyjportfolio/static/media/tabletBG2.0e4643e653394b32519e13dccc940447.svg",
     "static/media/padlock.svg": "/tobyjportfolio/static/media/padlock.3d3886f910f3c094a13556b841bc65e3.svg",
     "main.c7ec3132.css.map": "/tobyjportfolio/static/css/main.c7ec3132.css.map",
-    "main.eec3d521.js.map": "/tobyjportfolio/static/js/main.eec3d521.js.map",
+    "main.68bc0c3e.js.map": "/tobyjportfolio/static/js/main.68bc0c3e.js.map",
     "787.28cb0dcd.chunk.js.map": "/tobyjportfolio/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c7ec3132.css",
-    "static/js/main.eec3d521.js"
+    "static/js/main.68bc0c3e.js"
   ]
 }
