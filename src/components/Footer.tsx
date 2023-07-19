@@ -21,14 +21,14 @@ const Footer = () => {
       }}
     >
       {/* Replace the "to" prop values with your desired routes */}
-      <Link to="/route1">
-        <img src={Linked} alt="Icon 1" style={{ width: '50px', height: '50px', margin: '0 10px' }} />
+      <Link to="https://www.linkedin.com/in/toby-carroll-68232127b/">
+        <img src={Linked} alt="Icon 1" style={{ width: '25px', height: '25px', margin: '0 10px' }} />
       </Link>
-      <Link to="/route2">
-        <img src={Github} alt="Icon 2" style={{ width: '50px', height: '50px', margin: '0 10px' }} />
+      <Link to="https://github.com/tjsoho">
+        <img src={Github} alt="Icon 2" style={{ width: '25px', height: '25px', margin: '0 10px' }} />
       </Link>
-      <Link to="/route3">
-        <img src={stackoverflow} alt="Icon 3" style={{ width: '50px', height: '50px', margin: '0 10px' }} />
+      <Link to="https://stackoverflow.com/users/21053235/toby-j">
+        <img src={stackoverflow} alt="Icon 3" style={{ width: '25px', height: '25px', margin: '0 10px' }} />
       </Link>
     </div>
   );

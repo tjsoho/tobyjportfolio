@@ -1,10 +1,10 @@
+import React from 'react';
 import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
 import Background from "./Background";
-
 
 const AboutMe = () => {
   const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
@@ -28,7 +28,7 @@ const AboutMe = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (mediumScreen) {
-    bgSVG = "url(" + Background + ")";
+    bgSVG = "url(" + tabletBG + ")";
     headingSize = "4rem";
     imageHeight = "430px";
     imageTop = "calc(100% - 348px)";
@@ -36,21 +36,13 @@ const AboutMe = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (largeScreen) {
-    bgSVG = "url(" + Background + ")";
+    bgSVG = "url(" + tabletBG + ")";
     headingSize = "5rem";
     imageHeight = "500px";
     imageTop = "calc(100% - 404px)";
     imageLeft = "calc(65% - 100px)";
     pad = "20px";
     textMargin = "100px";
-  // } else if (extraLargeScreen) {
-  //   bgSVG = "url(" + tabletBG + ")";
-  //   headingSize = "6rem";
-  //   imageHeight = "600px";
-  //   imageTop = "calc(100% - 485px)";
-  //   imageLeft = "calc(65% - 140px)";
-  //   pad = "20px";
-  //   textMargin = "200px";
   } else {
     bgSVG = "url(" + tabletBG + ")";
     headingSize = "8rem";
@@ -63,17 +55,14 @@ const AboutMe = () => {
 
   const scrollbarStyles = {
     "&::-webkit-scrollbar": {
-      width: "8px",
-    },
-    "&::-webkit-scrollbar-track": {
-      background: "transparent",
+      width: "0rem",
+      backgroundColor: "transparent",
     },
     "&::-webkit-scrollbar-thumb": {
-      background: "transparent",
-      borderRadius: "4px",
+      backgroundColor: "transparent",
     },
-    "&:hover::-webkit-scrollbar-thumb": {
-      background: "#aaa",
+    "&::-webkit-scrollbar-thumb:hover": {
+      backgroundColor: "#aaa",
     },
   };
 
@@ -144,7 +133,6 @@ const AboutMe = () => {
                   <br />
                   Me.
                 </Typography>
-             
                 <Box
                   sx={{
                     maxHeight: "calc(50vh - 150px)",
