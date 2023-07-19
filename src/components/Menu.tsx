@@ -1,8 +1,9 @@
-import React from "react";
-import { Box, Grid, Button, useMediaQuery } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Grid, Button, useMediaQuery, Switch } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import bw from "../assets/bw.svg";
 
 const colors = [
   "#FFE597",
@@ -77,6 +78,7 @@ const DownloadLink = () => {
 
 const Menu = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
+  const [bwMode, setBwMode] = useState(false);
 
   let boxHeight;
   let boxWidth;
@@ -93,6 +95,10 @@ const Menu = () => {
     fSize = "20px";
     buttonw = "250px";
   }
+
+  const handleToggle = () => {
+    setBwMode(!bwMode);
+  };
 
   const boxStyle = {
     height: boxHeight,
@@ -121,13 +127,16 @@ const Menu = () => {
       alignItems="center"
       height="100vh"
       sx={{
-        backgroundImage: `url(${tabletBG})`,
+        backgroundImage: `url(${bwMode ? bw : tabletBG})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "0 20px",
       }}
     >
+      <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
+        <Switch checked={bwMode} onChange={handleToggle} color="primary" />
+      </Box>
       <Grid container spacing={4}>
         <Grid
           item

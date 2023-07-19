@@ -1,15 +1,22 @@
-import React from 'react';
-import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Box, useMediaQuery, Typography, Button, Switch } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";
 import portrait from "../assets/TobyPortraitNoBG.png";
 import { Link } from "react-router-dom";
-import Background from "./Background";
+import bw from "../assets/bw.svg";
 
 const AboutMe = () => {
-  const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
-  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 900px)");
-  const largeScreen = useMediaQuery("(min-width: 900px) and (max-width: 1350px)");
+  const smallScreen = useMediaQuery(
+    "(min-width: 300px) and (max-width: 600px)"
+  );
+  const mediumScreen = useMediaQuery(
+    "(min-width: 600px) and (max-width: 900px)"
+  );
+  const largeScreen = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1350px)"
+  );
+  const [bwMode, setBwMode] = useState(false);
 
   let bgSVG;
   let headingSize;
@@ -21,7 +28,7 @@ const AboutMe = () => {
 
   if (smallScreen) {
     bgSVG = "url(" + mobileBG + ")";
-    headingSize = "3rem";
+    headingSize = "3.3rem";
     imageHeight = "300px";
     imageTop = "calc(100% - 244px)"; // Adjusted value to position the image at the bottom line
     imageLeft = "calc(65% - 125px)";
@@ -52,6 +59,10 @@ const AboutMe = () => {
     pad = "80px";
     textMargin = "250px";
   }
+
+  const handleToggle = () => {
+    setBwMode(!bwMode);
+  };
 
   const scrollbarStyles = {
     "&::-webkit-scrollbar": {
@@ -93,7 +104,7 @@ const AboutMe = () => {
           sx={{
             height: "100vh",
             width: "100vw",
-            backgroundImage: bgSVG,
+            backgroundImage: `url(${bwMode ? bw : tabletBG})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -101,6 +112,9 @@ const AboutMe = () => {
             position: "relative",
           }}
         >
+          <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
+            <Switch checked={bwMode} onChange={handleToggle} color="primary" />
+          </Box>
           <Box
             sx={{
               display: "flex",

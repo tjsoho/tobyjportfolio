@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import AboutMe from "./AboutMe";
 import Portfolio from "./Portfolio";
 import Footer from "./Footer";
+import MobileFrame from "./MobileFrame";
 
 const Home = () => {
   const smallScreen = useMediaQuery(

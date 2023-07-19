@@ -10,6 +10,8 @@ import AboutMe from "./components/AboutMe";
 import ContactForm from "./components/ContactForm";
 import Menu from "./components/Menu";
 import Background from "./components/Background";
+import MobileFrame from "./components/MobileFrame";
+import UiDesigns from "./components/UiDesigns";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="contact" element={<ContactForm />} />
             <Route path="menu" element={<Menu />} />
             <Route path="background" element={<Background />} />
+            <Route path="mobilef" element={<MobileFrame />} />
+            <Route path="uidesigns" element={<UiDesigns />} />
           </Routes>
         </Router>
         

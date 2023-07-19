@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Box, useMediaQuery, Typography, Button } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/largeSVG.svg";
@@ -7,6 +7,7 @@ import weather from "../assets/weather.svg";
 import note from "../assets/notes.svg";
 import password from "../assets/padlock.svg";
 import { Link } from "react-router-dom";
+import MobileFrame from "./MobileFrame";
 
 const Portfolio = () => {
   const smallScreen = useMediaQuery(
@@ -15,6 +16,7 @@ const Portfolio = () => {
   const mediumScreen = useMediaQuery(
     "(min-width: 600px) and (max-width: 1350px)"
   );
+  
 
   let bgSVG;
   if (smallScreen) {
