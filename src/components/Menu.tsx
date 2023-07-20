@@ -43,7 +43,13 @@ const DownloadLink = () => {
 
   const smallScreen = useMediaQuery("(max-width: 600px)");
   const [fSize, setFSize] = useState("20px");
-  const buttonw = "250px";
+  let buttonw = "50px";
+
+  if (smallScreen) {
+    buttonw = "120px";
+  } else {
+    buttonw = "230px";
+  }
 
   useEffect(() => {
     if (smallScreen) {
