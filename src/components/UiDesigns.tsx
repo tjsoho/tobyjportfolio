@@ -49,7 +49,8 @@ const UiDesigns = () => {
       height="100vh"
       sx={{
         backgroundImage: `url(${bwMode ? bw : tabletBG})`,
-        backgroundRepeat: "repeat",
+        backgroundRepeat: "no-repeat",
+        
         backgroundPosition: "center",
         padding: "0 20px",
       }}

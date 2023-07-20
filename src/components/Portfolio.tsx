@@ -43,7 +43,7 @@ const Portfolio = () => {
     border: "1px solid",
     borderColor: "#D9D9D9",
     height: "400px",
-    width: "350px",
+    width: "300px",
     display: "flex",
     flexDirection: "column",
     padding: "20px",
@@ -71,7 +71,7 @@ const Portfolio = () => {
       backgroundColor: "transparent",
       color: "white",
       height: "50px",
-      width: "50px",
+      width: "30px",
       top: "calc(50% - 25px)",
       "&:hover": {
         backgroundColor: "transparent",
