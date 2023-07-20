@@ -99,11 +99,11 @@ const Portfolio = () => {
       <Box
         sx={{
           height: "100vh",
-          width: "100vw",
           backgroundImage: `url(${bwMode ? bw : tabletBG})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          width: "100vw",
           
         }}
       >
@@ -116,6 +116,7 @@ const Portfolio = () => {
             flexDirection: "column",
             alignItems: "flex-end",
             marginRight: "10px",
+            
           }}
         >
           <Link to="/menu" style={{ textDecoration: "none" }}>
@@ -139,10 +140,10 @@ const Portfolio = () => {
             alignItems: "center",
             flexWrap: "wrap",
             height: "85vh",
-            width: "100vw",
+            
           }}
         >
-          <Box sx={carouselStyle}>
+          <Box sx={carouselStyle} >
             <Carousel>
               {/* CARD 1 */}
               <div>

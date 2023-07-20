@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 
 const UiDesigns = () => {
-  const smallScreen = useMediaQuery("(max-width: 600px)");
+  const smallScreen = useMediaQuery("(max-width: 900px)");
   const [bwMode, setBwMode] = useState(false);
   
 
@@ -20,18 +20,21 @@ const UiDesigns = () => {
   let fSize;
   let buttonw;
   let buttonPos;
+  let bheight;
   if (smallScreen) {
     boxHeight = "contain";
     boxWidth = "45vw";
     fSize = "15px";
     buttonw = "130px";
     buttonPos = -200;
+    bheight = "283dvh";
   } else {
     boxHeight = "100vh";
     boxWidth = "40vw";
     fSize = "20px";
     buttonw = "250px";
      buttonPos = -250;
+     bheight = "100vh";
   }
 
   const handleToggle = () => {
@@ -46,11 +49,11 @@ const UiDesigns = () => {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      height="100vh"
+      height={bheight}
       sx={{
         backgroundImage: `url(${bwMode ? bw : tabletBG})`,
         backgroundRepeat: "no-repeat",
-        
+        backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "0 20px",
       }}
