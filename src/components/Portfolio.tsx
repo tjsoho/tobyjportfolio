@@ -43,14 +43,14 @@ const Portfolio = () => {
     border: "1px solid",
     borderColor: "#D9D9D9",
     height: "400px",
-    width: "300px",
+    width: "30%", // Use a percentage-based width for responsiveness
     display: "flex",
     flexDirection: "column",
     padding: "20px",
     marginTop: "50px",
     marginBottom: "50px",
     flexWrap: "wrap",
-    margin: "0 auto",
+    margin: "0 auto", // Remove the margin
   };
 
   const buttonStyle = {
@@ -66,9 +66,11 @@ const Portfolio = () => {
     height: "180px",
   };
 
+
   const carouselStyle = {
     "& .carousel .control-arrow": {
       backgroundColor: "transparent",
+      margin: "0",
       color: "white",
       height: "50px",
       width: "30px",
@@ -80,22 +82,26 @@ const Portfolio = () => {
     "& .carousel .control-arrow:before": {
       fontSize: "60px",
       color: "black",
+      margin: "0",
     },
     "& .carousel .carousel-status": {
       display: "none",
+      margin: "0",
+    },
+    "& .carousel .carousel-slider .control-dots": {
+      margin: "0", // Remove the margin from the dots
+      
     },
     "& .carousel .control-prev.control-arrow": {
-      left: "450px",
+      left: "0",
     },
     "& .carousel .control-next.control-arrow": {
-      right: "450px",
+      right: "0",
     },
   };
-  
-  
 
   return (
-    <Grid container>
+    <Grid container sx={{margin: "0" }}>
       <Box
         sx={{
           height: "100vh",
@@ -104,7 +110,7 @@ const Portfolio = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           width: "100vw",
-          
+          margin: "0",
         }}
       >
         <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
@@ -116,7 +122,7 @@ const Portfolio = () => {
             flexDirection: "column",
             alignItems: "flex-end",
             marginRight: "10px",
-            
+            margin: "0",
           }}
         >
           <Link to="/menu" style={{ textDecoration: "none" }}>
@@ -140,13 +146,13 @@ const Portfolio = () => {
             alignItems: "center",
             flexWrap: "wrap",
             height: "85vh",
-            
+            margin: "0",
           }}
         >
-          <Box sx={carouselStyle} >
+          <Box sx={carouselStyle}>
             <Carousel>
               {/* CARD 1 */}
-              <div>
+              <div style={{ margin: "0" }}>
                 <Box sx={glassMorphismStyles}>
                   <Box
                     sx={{
@@ -154,6 +160,7 @@ const Portfolio = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
+                      margin: "0",
                     }}
                   >
                     <img src={travel} alt="" style={imageStyle} />
@@ -175,7 +182,7 @@ const Portfolio = () => {
               </div>
 
               {/* CARD 2 */}
-              <div>
+              <div style={{ margin: "0" }}>
                 <Box sx={glassMorphismStyles}>
                   <Box
                     sx={{
@@ -183,6 +190,7 @@ const Portfolio = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
+                      margin: "0" 
                     }}
                   >
                     <img src={weather} alt="" style={imageStyle} />
@@ -202,7 +210,7 @@ const Portfolio = () => {
                 </Box>
               </div>
               {/* CARD 3 */}
-              <div>
+              <div style={{ margin: "0" }}>
                 <Box sx={glassMorphismStyles}>
                   <Box
                     sx={{
@@ -210,6 +218,7 @@ const Portfolio = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
+                      margin: "0" 
                     }}
                   >
                     <img src={note} alt="" style={imageStyle} />
@@ -231,7 +240,7 @@ const Portfolio = () => {
               </div>
 
               {/* CARD 4 */}
-              <div>
+              <div style={{ margin: "0" }}>
                 <Box sx={glassMorphismStyles}>
                   <Box
                     sx={{
@@ -239,6 +248,7 @@ const Portfolio = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
+                      margin: "0" 
                     }}
                   >
                     <img src={password} alt="" style={imageStyle} />
