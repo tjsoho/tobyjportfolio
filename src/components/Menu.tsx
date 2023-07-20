@@ -46,7 +46,7 @@ const DownloadLink = () => {
   let buttonw = "50px";
 
   if (smallScreen) {
-    buttonw = "120px";
+    buttonw = "140px";
   } else {
     buttonw = "230px";
   }
