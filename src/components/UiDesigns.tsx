@@ -7,13 +7,11 @@ import MobileFrame2 from "./MobileFrame2";
 import MobileFrame3 from "./MobileFrame3";
 import bw from "../assets/bw.svg";
 import { Link } from "react-router-dom";
-
-
+import Scroll from "./Scroll";
 
 const UiDesigns = () => {
   const smallScreen = useMediaQuery("(max-width: 900px)");
   const [bwMode, setBwMode] = useState(false);
-  
 
   let boxHeight;
   let boxWidth;
@@ -33,15 +31,13 @@ const UiDesigns = () => {
     boxWidth = "40vw";
     fSize = "20px";
     buttonw = "250px";
-     buttonPos = -250;
-     bheight = "100vh";
+    buttonPos = -250;
+    bheight = "100vh";
   }
 
   const handleToggle = () => {
     setBwMode(!bwMode);
   };
-
-
 
   return (
     <Box
@@ -56,42 +52,50 @@ const UiDesigns = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "0 20px",
+        marginBottom: "20px",
+        position: "relative", // Ensure the container has position: relative
+        zIndex: 0, // Set the zIndex to 0 for the background container
       }}
     >
       <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
         <Switch checked={bwMode} onChange={handleToggle} color="primary" />
       </Box>
-      <Box position="absolute" top={0} right={0}
+      <Box
+        position="absolute"
+        top={0}
+        right={0}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          marginRight: "0px",
+        }}
+      >
+        <Link to="/menu" style={{ textDecoration: "none" }}>
+          <Button
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              marginRight: "0px",
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
             }}
           >
-            <Link to="/menu" style={{ textDecoration: "none" }}>
-              <Button
-                sx={{
-                  width: "150px",
-                  height: "45px",
-                  fontSize: 20,
-                  margin: "10px",
-                }}
-              >
-                Menu
-              </Button>
-            </Link>
-          </Box>
-      <Grid container spacing={4}>
+            Menu
+          </Button>
+        </Link>
+      </Box>
+      <Grid container spacing={4} mt="20px">
         <Grid
           item
-          xs={12} sm={12} md={4}
+          xs={12}
+          sm={12}
+          md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"
         >
-          {/* ------------------------ */}
-          <Box>
+          {/* First Mobile Frame */}
+          <Box sx={{ marginTop: "0px" }}>
             <Box
               sx={{
                 display: "flex",
@@ -100,6 +104,8 @@ const UiDesigns = () => {
                 height: "100%",
               }}
             >
+              {/* Scroll component beside the MobileFrame */}
+              <Box mr={1}></Box>
               <MobileFrame />
             </Box>
           </Box>
@@ -107,7 +113,9 @@ const UiDesigns = () => {
 
         <Grid
           item
-          xs={12} sm={12} md={4}
+          xs={12}
+          sm={12}
+          md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -128,7 +136,9 @@ const UiDesigns = () => {
         </Grid>
         <Grid
           item
-          xs={12} sm={12} md={4}
+          xs={12}
+          sm={12}
+          md={4}
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -148,7 +158,7 @@ const UiDesigns = () => {
           </Box>
         </Grid>
       </Grid>
-      
+
       <Footer />
     </Box>
   );

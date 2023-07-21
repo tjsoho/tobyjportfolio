@@ -71,12 +71,13 @@ const Portfolio = () => {
     "& .carousel .control-arrow": {
       backgroundColor: "transparent",
       margin: "0",
-      color: "white",
+      color: "black",
       height: "50px",
       width: "30px",
       top: "calc(50% - 25px)",
+      zIndex: 1, // Add zIndex to make the arrows appear above the glass morphism
       "&:hover": {
-        backgroundColor: "transparent",
+        backgroundColor: "black",
       },
     },
     "& .carousel .control-arrow:before": {
@@ -90,15 +91,15 @@ const Portfolio = () => {
     },
     "& .carousel .carousel-slider .control-dots": {
       margin: "0", // Remove the margin from the dots
-      
     },
     "& .carousel .control-prev.control-arrow": {
-      left: "0",
+      left: "300px", // Adjust the left position to move the left arrow closer
     },
     "& .carousel .control-next.control-arrow": {
-      right: "0",
+      right: "300px", // Adjust the right position to move the right arrow closer
     },
   };
+  
 
   return (
     <Grid container sx={{margin: "0" }}>

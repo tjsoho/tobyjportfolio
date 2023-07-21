@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import verticalSVG from "../assets/vertical-hello.svg";
 import horizontal from "../assets/horizontal.svg";
 import { Link } from "react-router-dom";
-import AboutMe from "./AboutMe";
-import Portfolio from "./Portfolio";
-import Footer from "./Footer";
+import Scroll from "./Scroll";
+
 
 const Home = () => {
   const smallScreen = useMediaQuery(

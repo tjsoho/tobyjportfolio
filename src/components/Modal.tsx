@@ -6,18 +6,40 @@ import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import mobileshadow from "../assets/mobileshadow.svg";
 import BG from "../assets/mobileh.svg";
+import { useMediaQuery } from "@mui/material";
+
+export default function TransitionsModal() {
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false); 
+  
+const smallScreen = useMediaQuery(
+  "(min-width: 300px) and (max-width: 600px)");
+
+let phoneWidth;
+let phoneHeight;
+let phonePad;
+if (smallScreen) {
+  phoneWidth = 245;
+  phoneHeight = "519px";
+  phonePad = 2;
+} else {
+  phoneWidth = 265;
+  phoneHeight = "570px";
+  phonePad = 4;
+}
+
+
 
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 265,
-  
+  width: phoneWidth,
   boxShadow: 24,
   borderRadius: "15px",
-  p: 4,
-  height: "570px",
+  p: phonePad,
+  height: phoneHeight,
   color: "grey 700",
   backgroundImage: `url(${BG})`,
   backgroundRepeat: "no-repeat",
@@ -26,9 +48,7 @@ const style = {
   
 };
 
-export default function TransitionsModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => setOpen(false);
+
 
   React.useEffect(() => {
     const hasVisitedBefore = localStorage.getItem("hasVisitedBefore");

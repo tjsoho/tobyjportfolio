@@ -55,10 +55,10 @@ const AboutMe = () => {
     textMargin = "100px";
   } else {
     bgSVG = "url(" + tabletBG + ")";
-    headingSize = "8rem";
+    headingSize = "7rem";
     imageHeight = "650px";
-    imageTop = "calc(100% - 569px)";
-    imageLeft = "calc(65% - 120px)";
+    imageTop = "calc(100% - 526px)";
+    imageLeft = "calc(65% - 90px)";
     pad = "80px";
     textMargin = "250px";
   }
