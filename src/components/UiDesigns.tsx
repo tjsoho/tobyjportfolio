@@ -114,7 +114,7 @@ const UiDesigns = () => {
         <Grid
           item
           xs={12}
-          sm={12}
+          sm={12} 
           md={4}
           display="flex"
           flexDirection="column"

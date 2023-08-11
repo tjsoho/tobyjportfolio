@@ -17,8 +17,10 @@ const colors = [
 
 const DownloadLink = () => {
   const handleDownload = () => {
-    const fileUrl = "./assets/TobyCarrollCV.pdf";
+    const fileUrl = "/TobyCarrollCV.pdf"; // Adjust the path if needed
     const fileName = "TobyCarrollCV.pdf";
+
+    console.log("File URL:", fileUrl);
 
     const xhr = new XMLHttpRequest();
     xhr.open("GET", fileUrl, true);
