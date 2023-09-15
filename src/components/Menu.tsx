@@ -128,7 +128,7 @@ const AboutMeButton: React.FC<ButtonProps> = ({ styles }) => (
 );
 
 const DesignButton: React.FC<ButtonProps> = ({ styles }) => (
-  <MenuItem text="DESIGNS" path="/designs" styles={styles} />
+  <MenuItem text="DESIGNS" path="/uidesigns" styles={styles} />
 );
 
 const DownloadButton: React.FC<ButtonProps> = ({ styles }) => (
