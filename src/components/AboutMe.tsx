@@ -21,7 +21,7 @@ const AboutMe = () => {
 
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
 
-  let bgSVG;
+  
   let headingSize;
   let imageHeight;
   let imageTop;
@@ -30,7 +30,6 @@ const AboutMe = () => {
   let textMargin;
 
   if (smallScreen) {
-    bgSVG = "url(" + mobileBG + ")";
     headingSize = "3.3rem";
     imageHeight = "300px";
     imageTop = "calc(100% - 244px)"; // Adjusted value to position the image at the bottom line
@@ -38,7 +37,6 @@ const AboutMe = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (mediumScreen) {
-    bgSVG = "url(" + tabletBG + ")";
     headingSize = "4rem";
     imageHeight = "430px";
     imageTop = "calc(100% - 348px)";
@@ -46,7 +44,6 @@ const AboutMe = () => {
     pad = "20px";
     textMargin = "0px";
   } else if (largeScreen) {
-    bgSVG = "url(" + tabletBG + ")";
     headingSize = "5rem";
     imageHeight = "450px";
     imageTop = "calc(100% - 365px)";
@@ -54,7 +51,6 @@ const AboutMe = () => {
     pad = "20px";
     textMargin = "100px";
   } else {
-    bgSVG = "url(" + tabletBG + ")";
     headingSize = "7rem";
     imageHeight = "650px";
     imageTop = "calc(100% - 526px)";

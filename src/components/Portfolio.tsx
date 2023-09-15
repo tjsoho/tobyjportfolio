@@ -2,12 +2,10 @@ import { useState } from "react";
 import {
   Grid,
   Box,
-  useMediaQuery,
   Typography,
   Button,
   Switch,
 } from "@mui/material";
-import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/largeSVG.svg";
 import travel from "../assets/travel.svg";
 import weather from "../assets/weather.svg";
@@ -20,18 +18,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 const Portfolio = () => {
-  const smallScreen = useMediaQuery("(min-width: 300px) and (max-width: 600px)");
-  const mediumScreen = useMediaQuery("(min-width: 600px) and (max-width: 1350px)");
   const [bwMode, setBwMode] = useState(false);
 
-  let bgSVG;
-  if (smallScreen) {
-    bgSVG = "url(" + mobileBG + ")";
-  } else if (mediumScreen) {
-    bgSVG = "url(" + tabletBG + ")";
-  } else {
-    bgSVG = "url(" + tabletBG + ")";
-  }
+
 
   const handleToggle = () => {
     setBwMode(!bwMode);
