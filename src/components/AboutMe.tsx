@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Grid, Box, useMediaQuery, Typography, Button, Switch } from "@mui/material";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";

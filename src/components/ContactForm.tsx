@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 import bw from "../assets/bw.svg";
 import mobileBG from "../assets/colour-square.svg";
 import tabletBG from "../assets/tabletBG.svg";

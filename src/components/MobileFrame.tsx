@@ -1,5 +1,4 @@
 import { Box } from "@mui/system";
-import React from "react";
 import mobileFrame from "../assets/mobileshadow.svg";
 import Shadow1 from "../assets/shadow1.png";
 import Shadow2 from "../assets/shadow2.png";

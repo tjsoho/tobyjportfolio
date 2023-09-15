@@ -1,6 +1,6 @@
-import { Box } from "@mui/system";
+
 import { motion, useCycle, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 import tabletBG from "../assets/tabletBG.svg";
 import tabletBG2 from "../assets/tabletBG2.svg";
 import tabletBG3 from "../assets/tabletBG3.svg";
@@ -20,10 +20,6 @@ const Background = () => {
     setIsActive(true);
     cycleImage();
   };
-
-  const timeout = setTimeout(() => {
-    setIsActive(false);
-  }, transition.duration * 10000);
 
   return (
     <AnimatePresence>

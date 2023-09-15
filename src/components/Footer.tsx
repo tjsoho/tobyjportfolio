@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Linked from '../assets/bi_linkedin.svg';
 import Github from '../assets/github.svg';

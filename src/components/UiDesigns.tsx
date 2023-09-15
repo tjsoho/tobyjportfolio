@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { Box, Grid, useMediaQuery, Switch, Button } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import Footer from "./Footer";
@@ -7,31 +7,19 @@ import MobileFrame2 from "./MobileFrame2";
 import MobileFrame3 from "./MobileFrame3";
 import bw from "../assets/bw.svg";
 import { Link } from "react-router-dom";
-import Scroll from "./Scroll";
+
 
 const UiDesigns = () => {
   const smallScreen = useMediaQuery("(max-width: 900px)");
   const [bwMode, setBwMode] = useState(false);
 
-  let boxHeight;
-  let boxWidth;
-  let fSize;
-  let buttonw;
-  let buttonPos;
+
   let bheight;
   if (smallScreen) {
-    boxHeight = "contain";
-    boxWidth = "45vw";
-    fSize = "15px";
-    buttonw = "130px";
-    buttonPos = -200;
+    
     bheight = "283dvh";
   } else {
-    boxHeight = "100vh";
-    boxWidth = "40vw";
-    fSize = "20px";
-    buttonw = "250px";
-    buttonPos = -250;
+  
     bheight = "100vh";
   }
 
