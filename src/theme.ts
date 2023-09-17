@@ -36,9 +36,9 @@ const theme = createTheme({
       fontWeight: 200,
       backgroundColor: '#ffcf51',
         ":hover": {
-          backgroundColor: "#FE7075",
-          color: "#FE7075",
-          fontSize: "3rem",
+          backgroundColor: "white",
+          color: "black",
+          fontSize: "1.3rem",
       },
     },
     h3: {

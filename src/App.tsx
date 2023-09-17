@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";  // Make sure to import useState
 
 import theme from "./theme";
 import Home from "./components/Home";
@@ -17,18 +17,20 @@ import Breath from "./components/Breath";
 import ProjectEmpower from "./components/ProjectEmpower";
 import Chevell from "./components/Chevell";
 
-
-
 function App() {
+  // State for managing the modal's open/close status
+  
+
   return (
     <ThemeProvider theme={theme}>
       <div>
-      <Router>
+        <Router>
           <Routes>
             <Route index element={<Home />} />
             <Route path="aboutme" element={<AboutMe />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact" element={<ContactForm />} />
+            {/* Pass the state and the setState function as props */}
             <Route path="menu" element={<Menu />} />
             <Route path="background" element={<Background />} />
             <Route path="mobilef" element={<MobileFrame />} />
@@ -39,7 +41,6 @@ function App() {
             <Route path="chevell" element={<Chevell />} />
           </Routes>
         </Router>
-        
       </div>
     </ThemeProvider>
   );

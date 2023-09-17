@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Grid, Button } from '@mui/material';
 import breathbg from '../assets/breathBG.svg';
 import { Link } from "react-router-dom";
-import lux1 from '../assets/lux1.png';
 import BreathGrid from './BreathGrid';
 import b1 from '../assets/breath1.png';
 

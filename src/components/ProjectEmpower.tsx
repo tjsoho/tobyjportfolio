@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Grid, Button } from '@mui/material';
-import breathbg from '../assets/breathBG.svg';
 import { Link } from "react-router-dom";
 import PE from '../assets/pe5.png';
 import PeGrid from './PeGrid';

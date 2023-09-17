@@ -1,11 +1,8 @@
-import { Button, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import computerFrame from "../assets/laptop.svg";
 import ll1 from "../assets/lovedLux1.svg";
-import ll2 from "../assets/ll2.svg";
-import ll3 from "../assets/ll3.svg";
-import ll4 from "../assets/ll4.svg";
-import ll5 from "../assets/ll5.svg";
+
 
 
 const ComputerOne = () => {
