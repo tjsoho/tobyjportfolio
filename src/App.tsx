@@ -12,6 +12,11 @@ import Menu from "./components/Menu";
 import Background from "./components/Background";
 import MobileFrame from "./components/MobileFrame";
 import UiDesigns from "./components/UiDesigns";
+import LuxeLove from "./components/LuxeLove";
+import Breath from "./components/Breath";
+import ProjectEmpower from "./components/ProjectEmpower";
+import Chevell from "./components/Chevell";
+
 
 
 function App() {
@@ -28,6 +33,10 @@ function App() {
             <Route path="background" element={<Background />} />
             <Route path="mobilef" element={<MobileFrame />} />
             <Route path="uidesigns" element={<UiDesigns />} />
+            <Route path="luxelove" element={<LuxeLove />} />
+            <Route path="breath" element={<Breath />} />
+            <Route path="projectempower" element={<ProjectEmpower />} />
+            <Route path="chevell" element={<Chevell />} />
           </Routes>
         </Router>
         

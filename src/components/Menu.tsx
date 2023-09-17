@@ -2,7 +2,6 @@ import { useState, useEffect, useMemo } from "react";
 import { Box, Grid, Button, useMediaQuery, Switch } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 import bw from "../assets/bw.svg";
 import Modal from "./Modal";
 
@@ -65,12 +64,12 @@ const Menu = () => {
       <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
         <Switch checked={bwMode} onChange={() => setBwMode(!bwMode)} color="primary" />
       </Box>
-      <Grid container spacing={4}>
+      <Grid container direction="column" spacing={4} alignItems="center">
         <AboutMeButton styles={styles} />
         <DesignButton styles={styles} />
         <DownloadButton styles={styles} />
       </Grid>
-      <Footer />
+      
       {openModal && <Modal />}
     </Box>
   );
@@ -95,7 +94,7 @@ interface MenuItemProps extends ButtonProps {
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({ text, path, styles, onClick }) => (
-  <Grid item xs={6} display="flex" flexDirection="column" alignItems="center">
+  <Grid item xs={12} display="flex" flexDirection="column" alignItems="center">
     <Box bgcolor={colors[4]} sx={styles.box}>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
         {
@@ -132,7 +131,7 @@ const DesignButton: React.FC<ButtonProps> = ({ styles }) => (
 );
 
 const DownloadButton: React.FC<ButtonProps> = ({ styles }) => (
-  <MenuItem text="Download" styles={styles} onClick={onDownloadPDFClick} />
+  <MenuItem text="RESUME" styles={styles} onClick={onDownloadPDFClick} />
 );
 
 export default Menu;
