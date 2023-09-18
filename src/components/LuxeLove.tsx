@@ -20,59 +20,56 @@ const LuxeLove: React.FC = () => {
                 zIndex: 0,
             }}
         >
-            {/* The Menu Button */}
-            <Box
-                position="absolute"
-                top={0}
-                right={0}
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-end",
-                    padding: "20px"
-                }}
-                zIndex={2}
-            >
-                <Link to="/menu" style={{ textDecoration: "none" }}>
-                    <Button
-                        sx={{
-                            width: "150px",
-                            height: "45px",
-                            fontSize: 20,
-                            margin: "10px",
-                        }}
-                    >
-                        Menu
-                    </Button>
-                </Link>
-            </Box>
-
-            {/* The Designs Button */}
-<Box
-    position="absolute"
-    top={0}
-    left={0}  // Adjusted from 'right'
-    sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",  // Adjusted from 'flex-end'
-        padding: "20px"
-    }}
-    zIndex={2}
->
-    <Link to="/uidesigns" style={{ textDecoration: "none" }}>  {/* Adjusted the path */}
-        <Button
+                         {/* The Menu Button */}
+      <Box
+        position="absolute"
+        top={0}
+        right={0}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-end",
+          padding: "20px",
+        }}
+        zIndex={2}
+      >
+        {/* The Designs Button */}
+        <Link to="/uidesigns" style={{ textDecoration: "none" }}>
+          <Button
             sx={{
-                width: "150px",
-                height: "45px",
-                fontSize: 20,
-                margin: "10px",
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#574e3d",
             }}
+          >
+            Designs
+          </Button>
+        </Link>
+        {/* The Menu Button */}
+        <Link
+          to="/menu"
+          style={{ textDecoration: "none", marginRight: "10px" }}
         >
-            Designs  {/* Adjusted the label */}
-        </Button>
-    </Link>
-</Box>
+          {" "}
+          {/* Added marginRight for spacing between buttons */}
+          <Button
+            variant="text"
+            sx={{
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#574e3d",
+            }}
+          >
+            Menu
+          </Button>
+        </Link>
+      </Box>
 
 
             {/* The scrollable content container */}
@@ -95,7 +92,7 @@ const LuxeLove: React.FC = () => {
                         <Grid container direction="column" spacing={2}>
                             {/* Top Left box */}
                             <Grid item sx={{ height: '40%', marginBottom: "20px" }}>
-                                <Box>
+                                <Box paddingLeft="50px">
                                     <h1 style={{ fontSize: '6rem', fontWeight: 700, color: '#4E371F', }}>Loved Luxe</h1>
                                     <p style={{ fontSize: '1.5rem', fontWeight: 400, color: '#8B6F51', }}>A collection of luxurious and decadent treats.</p>
                                 </Box>
@@ -128,7 +125,7 @@ const LuxeLove: React.FC = () => {
                             </Grid>
                             {/* Bottom Right box */}
                             <Grid item sx={{ height: '70%' }}>
-                                <Box sx={{paddingX: "20px"}}>
+                                <Box sx={{paddingX: "50px"}}>
                                     <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#4E371F', }}>The Project</h2>
                                     <p style={{ fontSize: '1.2rem', fontWeight: 400, color: '#8B6F51', }}>Luxed Love is a distinguished purveyor of second-hand luxury treasures, specializing in opulent bags and timepieces.   
                                     <br />

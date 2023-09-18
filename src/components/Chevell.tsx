@@ -20,59 +20,57 @@ const Chevell: React.FC = () => {
                 zIndex: 0,
             }}
         >
-            {/* The Menu Button */}
-            <Box
-                position="absolute"
-                top={0}
-                right={0}
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-end",
-                    padding: "20px"
-                }}
-                zIndex={2}
-            >
-                <Link to="/menu" style={{ textDecoration: "none" }}>
-                    <Button
-                        sx={{
-                            width: "150px",
-                            height: "45px",
-                            fontSize: 20,
-                            margin: "10px",
-                        }}
-                    >
-                        Menu
-                    </Button>
-                </Link>
-            </Box>
-
-            {/* The Designs Button */}
-<Box
-    position="absolute"
-    top={0}
-    left={0}  // Adjusted from 'right'
-    sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",  // Adjusted from 'flex-end'
-        padding: "20px"
-    }}
-    zIndex={2}
->
-    <Link to="/uidesigns" style={{ textDecoration: "none" }}>  
-        <Button
+              {/* The Menu Button */}
+      <Box
+        position="absolute"
+        top={0}
+        right={0}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-end",
+          padding: "20px",
+        }}
+        zIndex={2}
+      >
+        {/* The Designs Button */}
+        <Link to="/uidesigns" style={{ textDecoration: "none" }}>
+          <Button
             sx={{
-                width: "150px",
-                height: "45px",
-                fontSize: 20,
-                margin: "10px",
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#574e3d",
             }}
+          >
+            Designs
+          </Button>
+        </Link>
+        {/* The Menu Button */}
+        <Link
+          to="/menu"
+          style={{ textDecoration: "none", marginRight: "10px" }}
         >
-            Designs  {/* Adjusted the label */}
-        </Button>
-    </Link>
-</Box>
+          {" "}
+          {/* Added marginRight for spacing between buttons */}
+          <Button
+            variant="text"
+            sx={{
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#574e3d",
+            }}
+          >
+            Menu
+          </Button>
+        </Link>
+      </Box>
+
 
 
             {/* The scrollable content container */}

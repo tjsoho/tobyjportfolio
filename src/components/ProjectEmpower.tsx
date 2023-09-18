@@ -20,60 +20,56 @@ const Breath: React.FC = () => {
                 zIndex: 0,
             }}
         >
-            {/* The Menu Button */}
-            <Box
-                position="absolute"
-                top={0}
-                right={0}
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-end",
-                    padding: "20px"
-                }}
-                zIndex={2}
-            >
-                <Link to="/menu" style={{ textDecoration: "none" }}>
-                    <Button
-                        sx={{
-                            width: "150px",
-                            height: "45px",
-                            fontSize: 20,
-                            margin: "10px",
-                        }}
-                    >
-                        Menu
-                    </Button>
-                </Link>
-            </Box>
-
-            {/* The Designs Button */}
-<Box
-    position="absolute"
-    top={0}
-    left={0}  // Adjusted from 'right'
-    sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",  // Adjusted from 'flex-end'
-        padding: "20px"
-    }}
-    zIndex={2}
->
-    <Link to="/uidesigns" style={{ textDecoration: "none" }}>  {/* Adjusted the path */}
-        <Button
+                        {/* The Menu Button */}
+      <Box
+        position="absolute"
+        top={0}
+        right={0}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "flex-end",
+          padding: "20px",
+        }}
+        zIndex={2}
+      >
+        {/* The Designs Button */}
+        <Link to="/uidesigns" style={{ textDecoration: "none" }}>
+          <Button
             sx={{
-                width: "150px",
-                height: "45px",
-                fontSize: 20,
-                margin: "10px",
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#30587c",
             }}
+          >
+            Designs
+          </Button>
+        </Link>
+        {/* The Menu Button */}
+        <Link
+          to="/menu"
+          style={{ textDecoration: "none", marginRight: "10px" }}
         >
-            Designs  {/* Adjusted the label */}
-        </Button>
-    </Link>
-</Box>
-
+          {" "}
+          {/* Added marginRight for spacing between buttons */}
+          <Button
+            variant="text"
+            sx={{
+              width: "150px",
+              height: "45px",
+              fontSize: 20,
+              margin: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              color: "#30587c",
+            }}
+          >
+            Menu
+          </Button>
+        </Link>
+      </Box>
 
             {/* The scrollable content container */}
             <Box
@@ -95,7 +91,7 @@ const Breath: React.FC = () => {
                         <Grid container direction="column" spacing={2}>
                             {/* Top Left box */}
                             <Grid item sx={{ height: '40%', marginBottom: "20px" }}>
-                                <Box>
+                                <Box paddingLeft="50px">
                                     <h1 style={{ fontSize: '5rem', fontWeight: 700, color: '#032544', }}>Project Empower</h1>
                                     <p style={{ fontSize: '1.5rem', fontWeight: 400, color: '#2E5579', }}>Find Harmony in Nature with our mindfulness retreats.</p>
                                 </Box>
@@ -128,7 +124,7 @@ const Breath: React.FC = () => {
                             </Grid>
                             {/* Bottom Right box */}
                             <Grid item sx={{ height: '70%' }}>
-                                <Box sx={{paddingX: "20px"}}>
+                                <Box sx={{paddingX: "50px"}}>
                                     <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#032544', }}>The Project</h2>
                                     <p style={{ fontSize: '1.2rem', fontWeight: 400, color: '#2E5579', }}>Breath is a tranquil retreat deeply rooted in nature, offering a sanctuary for wellness and self-discovery.
                                     <br />

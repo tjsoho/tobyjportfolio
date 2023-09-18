@@ -1,7 +1,9 @@
+import React from 'react';
 import { useState, useEffect, useMemo } from "react";
-import { Box, Grid, Button, useMediaQuery, Switch } from "@mui/material";
+import { Box, Grid, Button, useMediaQuery, Switch, IconButton } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close'; // <-- Added Close Icon import
+import { Link, useNavigate } from "react-router-dom";
 import tabletBG from "../assets/largeSVG.svg";
-import { Link } from "react-router-dom";
 import bw from "../assets/bw.svg";
 import Modal from "./Modal";
 
@@ -11,6 +13,7 @@ const Menu = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
   const [bwMode, setBwMode] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const navigate = useNavigate();  // <-- Added useHistory for navigation control
 
   const styles = useMemo(() => {
     const commonButtonStyles = {
@@ -61,6 +64,16 @@ const Menu = () => {
         padding: "0 20px",
       }}
     >
+      {/* Close Button */}
+      <IconButton 
+          style={{ position: 'absolute', top: '10px', right: '10px' }} 
+          onClick={() => navigate(-1)}
+
+      >
+          <CloseIcon fontSize="large" />
+
+      </IconButton>
+
       <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
         <Switch checked={bwMode} onChange={() => setBwMode(!bwMode)} color="primary" />
       </Box>

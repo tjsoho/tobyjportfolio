@@ -36,6 +36,7 @@ const PeGrid: React.FC<ImageGridProps> = ({ images }) => {
             gap={2}
             width="100%"   // Set width to 100vw
             height="100%"  // Set height to 100vh
+            padding="50px"
         >
             {selectedImages.map((src, index) => (
                 <Box
@@ -48,7 +49,7 @@ const PeGrid: React.FC<ImageGridProps> = ({ images }) => {
                     justifyContent="center"
                     padding="10px"
                 >
-                    <img src={src} alt={`Image ${index}`} style={{maxWidth: '100%', maxHeight: '100%'}} />
+                    <img src={src} alt={`${index}`} style={{maxWidth: '100%', maxHeight: '100%'}} />
                 </Box>
             ))}
         </Box>
