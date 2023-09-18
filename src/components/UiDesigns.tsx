@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Grid, useMediaQuery, Switch, Button } from "@mui/material";
+import { Box, Grid, useMediaQuery, Switch, Button, Typography } from "@mui/material";
 import tabletBG from "../assets/largeSVG.svg";
 import MobileFrame from "./MobileFrame";
 import MobileFrame2 from "./MobileFrame2";
@@ -88,7 +88,23 @@ const UiDesigns = () => {
           zIndex: 1,
         }}
       >
-        <Grid container spacing={4} mt="20px">
+        <Grid container spacing={2}>
+        <Grid
+            item
+            xs={12}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Box>
+              <Typography variant="h2" textAlign="center" sx={{ marginBottom: "20px" }}>
+               Ui Designs 
+              </Typography>
+              <Typography variant="body1" textAlign="center" sx={{ marginBottom: "20px" }}>
+              Scroll over the mobile devices or click on the laptops to explore further.
+              </Typography>
+            </Box>
+          </Grid>
           <Grid
             item
             xs={12}
@@ -241,7 +257,9 @@ const UiDesigns = () => {
               width="100vw"
               marginTop={16}
             >
+                
               <ComputerThree />
+              
               <Link to="/projectempower" style={{ textDecoration: "none" }}>  
               <Button sx={{
                 width: "250px",

@@ -93,7 +93,7 @@ const Breath: React.FC = () => {
                             <Grid item sx={{ height: '40%', marginBottom: "20px" }}>
                                 <Box paddingLeft="50px">
                                     <h1 style={{ fontSize: '5rem', fontWeight: 700, color: '#032544', }}>Project Empower</h1>
-                                    <p style={{ fontSize: '1.5rem', fontWeight: 400, color: '#2E5579', }}>Find Harmony in Nature with our mindfulness retreats.</p>
+                                    <p style={{ fontSize: '1.5rem', fontWeight: 400, color: '#2E5579', }}>Breaking down the stigma of 'Finance is boring.'</p>
                                 </Box>
                             </Grid>
                             {/* Bottom Left box */}
@@ -126,13 +126,13 @@ const Breath: React.FC = () => {
                             <Grid item sx={{ height: '70%' }}>
                                 <Box sx={{paddingX: "50px"}}>
                                     <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#032544', }}>The Project</h2>
-                                    <p style={{ fontSize: '1.2rem', fontWeight: 400, color: '#2E5579', }}>Breath is a tranquil retreat deeply rooted in nature, offering a sanctuary for wellness and self-discovery.
+                                    <p style={{ fontSize: '1.2rem', fontWeight: 400, color: '#2E5579', }}>Project Empower is a fun and interactive online course designed to teach you how to take control of your finances.
                                     <br />
                                     <br />
-                                    The website design, inspired by forest green and earthy browns, embodies the essence of this natural haven.As users navigate through its pages, they should feel as though they are wandering through a pristine woodland, with every aspect of the site connecting them to the natural world. 
+                                    The website design should be fun, bold and playful to break down the stigma that finance is boring. The website should be easy to navigate and the content should be easy to digest.
                                     <br />
                                     <br />
-                                    The overall experience should be soothing and immersive, leaving visitors with a profound sense of serenity and a desire to explore the healing potential of nature..</p>
+                                    The overall experience should be enjoyable bright and invitive, leaving visitors with a confidence to book in to an enjoyable interactive finance course.</p>
                                 </Box>
                             </Grid>
                         </Grid>

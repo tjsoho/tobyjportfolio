@@ -1,20 +1,19 @@
 import { useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 import computerFrame from "../assets/laptop.svg";
 import PE from "../assets/PE.svg";
-
-
 
 const ComputerOne = () => {
   const smallScreen = useMediaQuery(
     "(min-width: 300px) and (max-width: 400px)"
   );
-    const mediumScreen = useMediaQuery(
-      "(min-width: 400px) and (max-width: 600px)"
-    );
-    const largeScreen = useMediaQuery(
-      "(min-width: 600px) and (max-width: 1000px)"
-    );
+  const mediumScreen = useMediaQuery(
+    "(min-width: 400px) and (max-width: 600px)"
+  );
+  const largeScreen = useMediaQuery(
+    "(min-width: 600px) and (max-width: 1000px)"
+  );
 
   let maxh;
   let padBot;
@@ -76,16 +75,17 @@ const ComputerOne = () => {
           },
         }}
       >
-        <img
-          src={PE}
-          alt="shadow"
-          style={{
-            maxHeight: maxh,
-            marginBottom: marginBot,
-            borderRadius: "5px",
-          }}
-        />
-    
+        <Link to="/projectempower">
+          <img
+            src={PE}
+            alt="shadow"
+            style={{
+              maxHeight: maxh,
+              marginBottom: marginBot,
+              borderRadius: "5px",
+            }}
+          />
+        </Link>
       </Box>
     </Box>
   );

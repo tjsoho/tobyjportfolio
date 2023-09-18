@@ -95,7 +95,7 @@ const Chevell: React.FC = () => {
                             <Grid item sx={{ height: '40%', marginBottom: "20px" }}>
                                 <Box paddingLeft="50px">
                                     <h1 style={{ fontSize: '5rem', fontWeight: 700, color: 'black', }}>Chevell</h1>
-                                    <p style={{ fontSize: '1.5rem', fontWeight: 400, color: 'gray', }}>Find Harmony in Nature with our mindfulness retreats.</p>
+                                    <p style={{ fontSize: '1.5rem', fontWeight: 400, color: 'gray', }}>Effortlessly stylish wedding photography.</p>
                                 </Box>
                             </Grid>
                             {/* Bottom Left box */}
@@ -126,15 +126,15 @@ const Chevell: React.FC = () => {
                             </Grid>
                             {/* Bottom Right box */}
                             <Grid item sx={{ height: '70%' }}>
-                                <Box sx={{paddingX: "50px"}}>
+                                <Box sx={{paddingX: "20px"}}>
                                     <h2 style={{ fontSize: '3rem', fontWeight: 700, color: 'black', }}>The Project</h2>
-                                    <p style={{ fontSize: '1.2rem', fontWeight: 400, color: 'gray', }}>Breath is a tranquil retreat deeply rooted in nature, offering a sanctuary for wellness and self-discovery.
+                                    <p style={{ fontSize: '1.2rem', fontWeight: 400, color: 'gray', }}>Chevell is a boutique wedding photography studio inspired by the style and timeless fashion of Vogue magazine.
                                     <br />
                                     <br />
-                                    The website design, inspired by forest green and earthy browns, embodies the essence of this natural haven.As users navigate through its pages, they should feel as though they are wandering through a pristine woodland, with every aspect of the site connecting them to the natural world. 
+                                    The website is a stylish, sophisticated yet simplistic design with a focus on showcasing the talent of Chevell photography.
                                     <br />
                                     <br />
-                                    The overall experience should be soothing and immersive, leaving visitors with a profound sense of serenity and a desire to explore the healing potential of nature..</p>
+                                    The overall experience should be clean and easy to navigate drawing users to the photography and videography.</p>
                                 </Box>
                             </Grid>
                         </Grid>
