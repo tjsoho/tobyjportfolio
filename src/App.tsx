@@ -1,6 +1,4 @@
 import { ThemeProvider } from "@mui/material";
-import React, { useState } from "react";  // Make sure to import useState
-
 import theme from "./theme";
 import Home from "./components/Home";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";

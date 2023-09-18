@@ -48,7 +48,7 @@ const ChevGrid: React.FC<ImageGridProps> = ({ images }) => {
                     justifyContent="center"
                     padding="10px"
                 >
-                    <img src={src} alt={`${index}`} style={{maxWidth: '100%', maxHeight: '100%'}} />
+                    <img src={src} alt={'chevell'} style={{maxWidth: '100%', maxHeight: '100%'}} />
                 </Box>
             ))}
         </Box>
