@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "install": "cd client && npm install && cd ../api && npm install",
-    "build": "cd client && npm run build && cd ../api && npm run build",
+    "build": "cd client && npm run build",
     "start": "cd api && npm run start",
-    "develop": "concurrently \"cd client && npm start\" \"cd api && npm run develop\""
+    "develop": "concurrently \"cd client && npm start\" \"cd api && npm run start\""
   },
   "devDependencies": {
     "concurrently": "^5.3.0"

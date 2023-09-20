@@ -1,6 +1,6 @@
-import express, { Request, Response } from "express";
-import dotenv from "dotenv";
-import path from "path"
+const express = require ("express");
+const dotenv = require ("dotenv");
+const path = require ("path")
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "../../client/build")));
 // app.use("/api", routes);
 
 if (process.env.NODE_ENV === "production") {
-  app.get("*", (req: Request, res: Response) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../../client/build/index.html"));
   });
 }
@@ -22,4 +22,4 @@ app.listen(PORT, () => {
   console.log("Server listening on port 3001");
 });
 
-export default app;
+module.exports = {app};
