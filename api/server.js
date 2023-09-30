@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../../client/build")));
 // app.use("/api", routes);
 
+const contactRoute = require("./routes/contact");
+app.use("/api", contactRoute);
+
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../../client/build/index.html"));

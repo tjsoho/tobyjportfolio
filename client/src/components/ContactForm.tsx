@@ -1,253 +1,138 @@
-import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Grid,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Switch,
-} from "@mui/material";
-import { Formik, Form } from "formik";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import bw from "../assets/bw.svg";
-import mobileBG from "../assets/colour-square.svg";
-import tabletBG from "../assets/tabletBG.svg";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import React, { useState } from "react";
+import { Grid, Typography, TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom"; // Import React Router's useHistory
 
-const Contact = () => {
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [isDialogOpen, setDialogOpen] = useState(false);
-  const [bwMode, setBwMode] = useState(false);
+const ContactForm: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false); // State to track if the form is submitted
+  const navigate = useNavigate(); // Initialize history from React Router
 
-  const handleToggle = () => {
-    setBwMode(!bwMode);
-  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-  const handleSubmitForm = (values: any) => {
-    // Validate name field
-    if (!values.name) {
-      setNameError("Name is required");
+    if (response.ok) {
+      // Handle successful form submission here
+      console.log("Form submitted successfully!");
+      setIsSubmitted(true); // Set the state to true when the form is successfully submitted
+      form.reset();
+
+      // Redirect to the home page after a successful submission (assuming "/home" is your home page route)
+      navigate("/#/home");
     } else {
-      setNameError("");
+      // Handle form submission errors here
+      console.error("Form submission failed.");
     }
-
-    // Validate email field
-    if (!values.email) {
-      setEmailError("Email is required");
-    } else if (!isValidEmail(values.email)) {
-      setEmailError("Invalid email address");
-    } else {
-      setEmailError("");
-    }
-
-    // Handle form submission logic here
-
-    // Open the confirmation dialog
-    setDialogOpen(true);
-  };
-
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const isSmallScreen = useMediaQuery("(max-width: 600px)");
-
-  const glassMorphismStyles = {
-    backdropFilter: "blur(55px) brightness(100%)",
-    background:
-      "linear-gradient(180deg, rgba(239, 239, 239, 0.6) 0%, rgba(239, 239, 239, 0.08) 100%)",
-    borderRadius: "20px",
-    border: "1px solid",
-    borderColor: "#D9D9D9",
-    height: "75%",
-    width: "75%",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    padding: "20px",
-    transform: "translate(-50%, -50%)",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  };
-
-  const textFieldStyle = {
-    color: "black",
   };
 
   return (
-    <Grid container>
-      <Box position="absolute" top={0} left={0} padding={2} zIndex={1}>
-        <Switch checked={bwMode} onChange={handleToggle} color="primary" />
-      </Box>
-      <Grid item xs={12} md={6}>
-        <Box
-          sx={{
-            height: "100vh",
-            width: "100vw",
-            backgroundImage: isSmallScreen
-              ? `url(${bwMode ? bw : mobileBG})`
-              : `url(${bwMode ? bw : tabletBG})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            margin: 0,
-            position: "relative",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              marginRight: "0px",
-            }}
+    <Grid container spacing={0}>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        sx={{
+          backgroundColor: "#5a70e9",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 8,
+        }}
+      >
+        <Typography variant="h2" gutterBottom>
+          Let's Chat
+        </Typography>
+        <Typography variant="h5" style={{ textAlign: 'center' }} gutterBottom>
+          I would love to hear what you are working on and how I could help.
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        sx={{
+          backgroundColor: "#ffe597",
+          padding: { xs: '50px', sm: "0 20px"},
+          height: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: { xs: "flex-start", sm: "center"},
+          alignItems: "center",
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <input
+            type="hidden"
+            name="access_key"
+            value="d20378cd-7df6-4008-ad81-8aab72bd3724" // Replace with your actual Access Key
+          />
+          <Typography variant="h3" align='center' gutterBottom>
+          Contact Form
+        </Typography>
+          <TextField
+            fullWidth
+            label="Full Name"
+            name="name"
+            variant="outlined"
+            margin="normal"
+            required
+          />
+          <TextField
+            fullWidth
+            label="Email Address"
+            name="email"
+            type="email"
+            variant="outlined"
+            margin="normal"
+            required
+          />
+          <TextField
+            fullWidth
+            label="Phone Number"
+            name="phone"
+            variant="outlined"
+            margin="normal"
+          />
+          <TextField
+            fullWidth
+            label="Your Message"
+            name="message"
+            multiline
+            rows={5}
+            variant="outlined"
+            margin="normal"
+            required
+          />
+          <div style={{ display: "none" }}>
+            <input type="checkbox" name="botcheck" />
+          </div>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            size="large"
           >
-            <Link to="/menu" style={{ textDecoration: "none" }}>
-              <Button
-                sx={{
-                  width: "150px",
-                  height: "45px",
-                  fontSize: 20,
-                  margin: "10px",
-                }}
-              >
-                Menu
-              </Button>
-            </Link>
-          </Box>
-          <Box sx={glassMorphismStyles}>
-            <Box
-              sx={{
-                textAlign: "center",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                mt: 2,
-                mb: 2,
-                maxWidth: 400,
-                mx: "auto",
-              }}
-            >
-              <Typography
-                variant="h1"
-                color="default"
-                sx={{
-                  letterSpacing: "4px",
-                  fontSize: "3.3rem",
-                  mb: 2,
-                  textAlign: "left",
-                }}
-              >
-                Contact <br /> Me.
-              </Typography>
-              <Formik
-                initialValues={{ name: "", email: "", phone: "", message: "" }}
-                onSubmit={handleSubmitForm}
-              >
-                <Form>
-                  <TextField
-                    id="standard-basic"
-                    label="Name"
-                    variant="standard"
-                    name="name"
-                    fullWidth
-                    color="secondary"
-                    sx={{ my: 1 }}
-                    inputProps={{
-                      style: textFieldStyle,
-                    }}
-                    error={Boolean(nameError)}
-                    helperText={nameError}
-                    onBlur={(e) => {
-                      if (!e.target.value) {
-                        setNameError("Name is required");
-                      } else {
-                        setNameError("");
-                      }
-                    }}
-                  />
-                  <TextField
-                    id="standard-basic"
-                    label="Email"
-                    variant="standard"
-                    name="email"
-                    fullWidth
-                    sx={{ my: 1 }}
-                    inputProps={{
-                      style: textFieldStyle,
-                    }}
-                    error={Boolean(emailError)}
-                    helperText={emailError}
-                    onBlur={(e) => {
-                      if (!e.target.value) {
-                        setEmailError("Email is required");
-                      } else if (!isValidEmail(e.target.value)) {
-                        setEmailError("Invalid email address");
-                      } else {
-                        setEmailError("");
-                      }
-                    }}
-                  />
-                  <TextField
-                    id="standard-basic"
-                    label="Message"
-                    variant="standard"
-                    name="message"
-                    fullWidth
-                    sx={{ my: 1 }}
-                    inputProps={{
-                      style: textFieldStyle,
-                    }}
-                    multiline
-                    rows={2}
-                  />
-                  <Button
-                    type="submit"
-                    sx={{
-                      borderRadius: "30px",
-                      height: "60px",
-                      width: "80%",
-                      textAlign: "center",
-                      color: "#0F352D",
-                      fontSize: "1.2rem",
-                      mt: 7,
-                    }}
-                  >
-                    Submit
-                  </Button>
-                  <Dialog
-                    open={isDialogOpen}
-                    onClose={() => setDialogOpen(false)}
-                  >
-                    <DialogTitle>Confirmation</DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>
-                        Your form has been submitted successfully!
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button onClick={() => setDialogOpen(false)}>
-                        Close
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
-                </Form>
-              </Formik>
-            </Box>
-          </Box>
-        </Box>
+            Send Message
+          </Button>
+        </form>
+        <p id="result" style={{ textAlign: "center" }}></p>
+        {/* Display a pop-up message if the form is successfully submitted */}
+        {isSubmitted && (
+          <div className="popup">
+            <Typography variant="h5">
+              Thanks for getting in touch! I'll be reaching out to you very
+              shortly.
+            </Typography>
+          </div>
+        )}
       </Grid>
     </Grid>
   );
 };
 
-export default Contact;
+export default ContactForm;
