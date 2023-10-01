@@ -28,7 +28,7 @@ const Menu = () => {
         height: smallScreen ? "20vh" : "25vh",
         width: smallScreen ? "45vw" : "40vw",
         border: "1px solid white",
-        borderRadius: "50px",
+        borderRadius: "5px",
         margin: "20px",
         backdropFilter: "blur(55px) brightness(80%)",
         background:
@@ -80,7 +80,7 @@ const Menu = () => {
       <Grid container direction="column" spacing={4} alignItems="center">
         <AboutMeButton styles={styles} />
         <DesignButton styles={styles} />
-        <DownloadButton styles={styles} />
+        <ContactButton styles={styles} />
       </Grid>
       
       {openModal && <Modal />}
@@ -88,17 +88,17 @@ const Menu = () => {
   );
 };
 
-const onDownloadPDFClick = () => {
-  fetch("/TobyCarrollCV.pdf").then((response) => {
-    response.blob().then((blob) => {
-      const fileURL = window.URL.createObjectURL(blob);
-      let alink = document.createElement("a");
-      alink.href = fileURL;
-      alink.download = "TobyCarrollCV.pdf";
-      alink.click();
-    });
-  });
-};
+// const onDownloadPDFClick = () => {
+//   fetch("/TobyCarrollCV.pdf").then((response) => {
+//     response.blob().then((blob) => {
+//       const fileURL = window.URL.createObjectURL(blob);
+//       let alink = document.createElement("a");
+//       alink.href = fileURL;
+//       alink.download = "TobyCarrollCV.pdf";
+//       alink.click();
+//     });
+//   });
+// };
 
 interface MenuItemProps extends ButtonProps {
   text: string;
@@ -142,9 +142,12 @@ const AboutMeButton: React.FC<ButtonProps> = ({ styles }) => (
 const DesignButton: React.FC<ButtonProps> = ({ styles }) => (
   <MenuItem text="DESIGNS" path="/uidesigns" styles={styles} />
 );
-
-const DownloadButton: React.FC<ButtonProps> = ({ styles }) => (
-  <MenuItem text="RESUME" styles={styles} onClick={onDownloadPDFClick} />
+const ContactButton: React.FC<ButtonProps> = ({ styles }) => (
+  <MenuItem text="CONTACT" path="/contactform" styles={styles} />
 );
+
+// const DownloadButton: React.FC<ButtonProps> = ({ styles }) => (
+//   <MenuItem text="RESUME" styles={styles} onClick={onDownloadPDFClick} />
+// );
 
 export default Menu;

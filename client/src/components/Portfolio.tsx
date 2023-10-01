@@ -29,7 +29,7 @@ const Portfolio = () => {
   const glassMorphismStyles = {
     backdropFilter: "blur(55px) brightness(80%)",
     background: "linear-gradient(45deg, rgba(94, 64, 64, 0.3) 0%, rgba(64, 64, 64, 0.08) 70%)",
-    borderRadius: "20px",
+    borderRadius: "5px",
     border: "1px solid",
     borderColor: "#D9D9D9",
     height: "400px",
@@ -47,7 +47,7 @@ const Portfolio = () => {
     margin: "20px",
     padding: "10px",
     width: "150px",
-    borderRadius: "10px",
+    borderRadius: "5px",
     fontSize: "20px",
   };
 
